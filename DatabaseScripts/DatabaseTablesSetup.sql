@@ -58,7 +58,7 @@ CREATE TABLE Posts
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
 	DatePublished	datetime,
-	HasSchedule		bit					NOT NULL,
+	HasSchedule		bit,
 	StartDate		datetime,
 	EndDate			datetime,
 	IsActive		bit					NOT NULL,
