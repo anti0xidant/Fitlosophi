@@ -2,12 +2,19 @@
 USE HealthBlogDB
 ------------------------------------------------------
 
-CREATE PROCEDURE NewPost
+CREATE PROCEDURE AddPost
 (
-	@Title			nvarchar(100),
-	@Body			nvarchar(4000),
-	@Duration		int,
+	@CategoryID		int,
+	@UserID			nvarchar(128),
+	@Title			nvarchar(200),
+	@CoverImgURL	nvarchar(2000),
+	@Body			nvarchar(MAX),
+	@DateCreated	datetime,
+	@HasSchedule	bit,
+	@StartDate		datetime,
+	@EndDate		datetime,	
 	@IsActive		bit,
+
 	@PostID			int output
 )
 
@@ -15,18 +22,28 @@ AS BEGIN
 
 INSERT INTO Posts
 (
+	CategoryID,
+	UserID,
 	Title,
+	CoverImgURL,
 	Body,
-	CreationDate,
-	Duration,
+	DateCreated,
+	HasSchedule,
+	StartDate,
+	EndDate,
 	IsActive
 )
 VALUES
 (
+	@CategoryID,
+	@UserID,
 	@Title,
+	@CoverImgURL,
 	@Body,
-	GetDate(),
-	@Duration,
+	GETDATE(),
+	@HasSchedule,
+	@StartDate,
+	@EndDate,
 	@IsActive
 )
 

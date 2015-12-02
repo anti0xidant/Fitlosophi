@@ -57,7 +57,7 @@ CREATE TABLE Posts
 	CoverImgURL		nvarchar(2000)		NOT NULL,
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
-	DatePublished	datetime			NOT NULL,
+	DatePublished	datetime,
 	HasSchedule		bit					NOT NULL,
 	StartDate		datetime,
 	EndDate			datetime,
@@ -82,6 +82,20 @@ CREATE TABLE PostsXHash
 )
 GO
 
+
+CREATE TABLE StaticPage
+(
+	StaticPageID	int IDENTITY (1,1)	NOT NULL	PRIMARY KEY,
+	ButtonName		nvarchar(50)		NOT NULL,
+	UserID			nvarchar(128)		NOT NULL,		
+	Body			nvarchar(MAX)		NOT NULL,
+	DateCreated		datetime			NOT NULL,
+	DatePublished	datetime,
+	IsActive		bit					NOT NULL,
+
+	CONSTRAINT FK_UserID		FOREIGN KEY (UserID)		REFERENCES	AspNetUsers (Id)	
+) 
+GO
 
 
 
