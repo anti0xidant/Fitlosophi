@@ -133,10 +133,35 @@ CREATE PROCEDURE DeletePage
 
 AS BEGIN
 
-UPDATE StaticPage 
+UPDATE StaticPage
 
 SET IsActive = 0
 WHERE  StaticPageID = @StaticPageID
 
 END 
+GO
+
+-- Add Tag
+CREATE PROCEDURE AddTag
+(
+	@TagName	nvarchar(1000)
+)
+
+AS BEGIN
+
+DECLARE @TagID AS INT
+
+SELECT @TagID = ht.TagID FROM HashTags ht WHERE LOWER(ht.TagName) = LOWER(@TagName)
+
+IF @TagID IS NULL
+   BEGIN
+       INSERT INTO HashTags (TagName)
+	   
+	   VALUES (LOWER(@TagName))
+       
+	   SELECT @TagID = SCOPE_IDENTITY()
+    END
+SELECT @TagID
+
+END
 GO
