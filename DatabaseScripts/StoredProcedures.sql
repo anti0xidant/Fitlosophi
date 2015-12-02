@@ -34,3 +34,36 @@ SET @PostID = SCOPE_IDENTITY();
 
 END 
 GO 
+
+
+-- Delete Post 
+CREATE PROCEDURE DeletePost
+(
+	@PostID			int
+)
+
+AS BEGIN
+
+UPDATE Posts 
+
+SET IsActive = 0
+WHERE PostID = @PostID
+
+END 
+GO
+
+-- Delete Page
+CREATE PROCEDURE DeletePage
+(
+	@PageID			int
+)
+
+AS BEGIN
+
+UPDATE Pages 
+
+SET IsActive = 0
+WHERE  PageID = @PageID
+
+END 
+GO
