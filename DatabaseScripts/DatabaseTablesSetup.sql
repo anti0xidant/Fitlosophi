@@ -93,7 +93,7 @@ CREATE TABLE StaticPage
 	DatePublished	datetime,
 	IsActive		bit					NOT NULL,
 
-	CONSTRAINT FK_UserID		FOREIGN KEY (UserID)		REFERENCES	AspNetUsers (Id)	
+	CONSTRAINT FK_UserIDStatic		FOREIGN KEY (UserID)		REFERENCES	AspNetUsers (Id)	
 ) 
 GO
 

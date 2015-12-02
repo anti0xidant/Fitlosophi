@@ -51,3 +51,39 @@ SET @PostID = SCOPE_IDENTITY();
 
 END 
 GO 
+
+
+CREATE PROCEDURE AddStaticPage
+(
+	@ButtonName		nvarchar(50),
+	@UserID			nvarchar(128),
+	@Body			nvarchar(MAX),
+	@DateCreated	datetime,
+	@IsActive		bit,
+	
+	@StaticPageID	int output
+)
+
+AS BEGIN
+
+INSERT INTO StaticPage
+(
+	ButtonName,
+	UserId,
+	Body,
+	DateCreated,
+	IsActive
+)
+VALUES
+(
+	@ButtonName,
+	@UserID,
+	@Body,
+	GetDate(),
+	@IsActive
+)
+
+SET @StaticPageID = SCOPE_IDENTITY();
+
+END
+GO
