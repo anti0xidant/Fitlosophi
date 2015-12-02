@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FITernitiMVC.Models
+namespace FITlosophiData.Models
 {
     public class Tag
     {
