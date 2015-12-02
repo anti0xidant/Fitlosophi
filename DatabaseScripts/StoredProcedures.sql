@@ -72,15 +72,15 @@ GO
 -- Delete Page
 CREATE PROCEDURE DeletePage
 (
-	@PageID			int
+	@StaticPageID	int
 )
 
 AS BEGIN
 
-UPDATE Pages 
+UPDATE StaticPage 
 
 SET IsActive = 0
-WHERE  PageID = @PageID
+WHERE  StaticPageID = @StaticPageID
 
 END 
 GO
