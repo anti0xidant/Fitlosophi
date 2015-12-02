@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
+using FITlosophiData.Config;
+using FITlosophiData.Models;
 
 namespace FITlosophiData.Repo
 {
     public class Create
     {
         // Add player to database. Player object is assigned a PlayerID
-        public void AddPlayer(Player player)
+        public void AddPost(Post post)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -17,11 +22,11 @@ namespace FITlosophiData.Repo
 
                 try
                 {
-                    p.Add("FirstName", player.FirstName);
-                    p.Add("LastName", player.LastName);
-                    p.Add("JerseyNumber", player.JerseyNumber);
-                    p.Add("TeamID", player.TeamID);
-                    p.Add("LastYearBA", player.LastYearBA);
+                    p.Add("CategoryID", post.CategoryID);
+                    p.Add("UserID", post.UserID);
+                    p.Add("Title", post.Title);
+                    p.Add("CoverImgURL", post.CoverImageUrl);
+                    p.Add("Body", post.Body);
                     p.Add("YearsPlayed", player.YearsPlayed);
                     p.Add("PrimaryPositionID", player.PrimaryPositionID);
                     p.Add("SecondaryPositionID", player.SecondaryPositionID);

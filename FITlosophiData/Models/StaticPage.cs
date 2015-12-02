@@ -12,6 +12,7 @@ namespace FITlosophiData.Models
         public string Body { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DatePublished { get; set; }
+        public bool IsPublished { get; set; }
         public bool IsActive { get; set; }
         public string WriterName { get; set; }
 
