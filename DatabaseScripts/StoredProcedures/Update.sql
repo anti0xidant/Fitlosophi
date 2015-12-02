@@ -12,7 +12,10 @@ CREATE PROCEDURE EditPost
 	@UserID			nvarchar(128),
 	@Title			nvarchar(200),
 	@CoverImgURL	nvarchar(2000),
-	@Body			nvarchar(MAX)
+	@Body			nvarchar(MAX),
+	@HasSchedule	bit,
+	@StartDate		datetime,
+	@EndDate		datetime
 )
 
 AS BEGIN
@@ -24,6 +27,9 @@ SET	    CategoryID	    =	@CategoryID,
 		Title		    =	@Title,
 		CoverImgURL		=	@CoverImgURL,
 		Body		    =	@Body,
+		HasSchedule		=	@HasSchedule,
+		StartDate		=	@StartDate,
+		EndDate			=	@EndDate,
 		DateModified    =   GetDate()
 
 WHERE	PostID			=	@PostID
@@ -102,3 +108,4 @@ END
 GO
 
 -----------------------------------------------------------
+

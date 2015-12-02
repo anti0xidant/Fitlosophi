@@ -25,6 +25,7 @@ INSERT INTO Posts
 	CoverImgURL,
 	Body,
 	DateCreated,
+	HasSchedule,
 	IsPublished,	
 	IsActive
 )
@@ -36,6 +37,7 @@ VALUES
 	@CoverImgURL,
 	@Body,
 	GETDATE(),
+	0,
 	0,
 	1
 )
@@ -91,7 +93,6 @@ CREATE PROCEDURE AddTag
 (
 	@PostID		int,
 	@ActualHashTag	nvarchar(1000),
-	@PostXHashID int OUTPUT
 )
 
 AS BEGIN
@@ -112,8 +113,6 @@ IF @TagID IS NULL
 INSERT INTO PostXHash (PostID, TagID, ActualHashTag)
 
 VALUES (@PostID, @TagID, @ActualHashTag)
-
-SET @PostXHashID = SCOPE_IDENTITY()
 
 END
 GO

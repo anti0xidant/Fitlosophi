@@ -15,11 +15,14 @@ AS BEGIN
 
 UPDATE Posts 
 
-SET IsActive = 0
-WHERE PostID = @PostID
+SET		IsActive	=	0, 
+		IsPublished =	0
+WHERE   PostID		=	 @PostID
 
 END 
 GO
+
+------------------------------------------------------
 
 -- Delete Page
 CREATE PROCEDURE DeletePage
@@ -31,8 +34,24 @@ AS BEGIN
 
 UPDATE StaticPage 
 
-SET IsActive = 0
-WHERE  StaticPageID = @StaticPageID
+SET		IsActive		=	 0, 
+		IsPublished		=	 0
+WHERE   StaticPageID	=	 @StaticPageID
 
 END 
+GO
+
+------------------------------------------------------
+
+CREATE PROCEDURE DeleteAllTagsByPostID
+(
+	@PostID	int
+)
+
+AS BEGIN
+
+DELETE FROM PostsXHash 
+WHERE PostID = @PostID
+
+END
 GO
