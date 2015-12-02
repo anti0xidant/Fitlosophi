@@ -35,5 +35,6 @@ ButtonName		nvarchar(50)
 UserID			nvarchar(128)
 Body			nvarchar(max)
 DateCreated		datetime
+DateModified		datetime
 DatePublished		datetime
 IsActive		bit

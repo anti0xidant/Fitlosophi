@@ -91,6 +91,7 @@ CREATE TABLE StaticPage
 	UserID			nvarchar(128)		NOT NULL,		
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
+	DateModified    datetime,
 	DatePublished	datetime,
 	IsActive		bit					NOT NULL,
 
