@@ -10,10 +10,6 @@ CREATE PROCEDURE AddPost
 	@CoverImgURL	nvarchar(2000),
 	@Body			nvarchar(MAX),
 	@DateCreated	datetime,
-	@HasSchedule	bit,
-	@StartDate		datetime,
-	@EndDate		datetime,	
-	@IsActive		bit,
 
 	@PostID			int output
 )
@@ -27,10 +23,7 @@ INSERT INTO Posts
 	Title,
 	CoverImgURL,
 	Body,
-	DateCreated,
-	HasSchedule,
-	StartDate,
-	EndDate,
+	DateCreated,	
 	IsActive
 )
 VALUES
@@ -41,13 +34,76 @@ VALUES
 	@CoverImgURL,
 	@Body,
 	GETDATE(),
-	@HasSchedule,
-	@StartDate,
-	@EndDate,
-	@IsActive
+	1
 )
 
 SET @PostID = SCOPE_IDENTITY();
+
+END 
+GO 
+
+
+CREATE PROCEDURE AddStaticPage
+(
+	@ButtonName		nvarchar(50),
+	@UserID			nvarchar(128),
+	@Body			nvarchar(MAX),
+	@DateCreated	datetime,
+	
+	@StaticPageID	int output
+)
+
+AS BEGIN
+
+INSERT INTO StaticPage
+(
+	ButtonName,
+	UserId,
+	Body,
+	DateCreated,
+	IsActive
+)
+VALUES
+(
+	@ButtonName,
+	@UserID,
+	@Body,
+	GetDate(),
+	1
+)
+
+SET @StaticPageID = SCOPE_IDENTITY();
+
+END
+GO
+
+
+CREATE PROCEDURE PublishPost
+(
+	@PostID			int,
+	@HasSchedule	bit,
+	@StartDate		datetime,
+	@EndDate		datetime
+)
+
+AS BEGIN
+
+INSERT INTO Posts
+(
+	DatePublished,
+	HasSchedule,
+	StartDate,
+	EndDate
+)
+VALUES
+(
+	GetDate(),
+	@HasSchedule,
+	@StartDate,
+	@EndDate
+)
+
+WHERE PostID = @PostID
 
 END 
 GO 
