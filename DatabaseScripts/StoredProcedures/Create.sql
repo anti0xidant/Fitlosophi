@@ -1,8 +1,8 @@
 --Create Stored Procedures
-
 ------------------------------------------------------
 USE HealthBlogDB
 ------------------------------------------------------
+
 
 CREATE PROCEDURE AddPost
 (
@@ -10,8 +10,7 @@ CREATE PROCEDURE AddPost
 	@UserID			nvarchar(128),
 	@Title			nvarchar(200),
 	@CoverImgURL	nvarchar(2000),
-	@Body			nvarchar(MAX),
-	@DateCreated	datetime,
+	@Body			nvarchar(MAX),	
 
 	@PostID			int output
 )
@@ -25,7 +24,8 @@ INSERT INTO Posts
 	Title,
 	CoverImgURL,
 	Body,
-	DateCreated,	
+	DateCreated,
+	IsPublished,	
 	IsActive
 )
 VALUES
@@ -36,6 +36,7 @@ VALUES
 	@CoverImgURL,
 	@Body,
 	GETDATE(),
+	0,
 	1
 )
 
@@ -44,14 +45,14 @@ SET @PostID = SCOPE_IDENTITY();
 END 
 GO 
 
+-----------------------------------------------------------
 
 CREATE PROCEDURE AddStaticPage
 (
 	@ButtonName		nvarchar(50),
 	@UserID			nvarchar(128),
 	@Body			nvarchar(MAX),
-	@DateCreated	datetime,
-	
+		
 	@StaticPageID	int output
 )
 
@@ -63,6 +64,7 @@ INSERT INTO StaticPage
 	UserId,
 	Body,
 	DateCreated,
+	IsPublished,
 	IsActive
 )
 VALUES
@@ -71,6 +73,7 @@ VALUES
 	@UserID,
 	@Body,
 	GetDate(),
+	0,
 	1
 )
 
@@ -79,3 +82,4 @@ SET @StaticPageID = SCOPE_IDENTITY();
 END
 GO
 
+-----------------------------------------------------------

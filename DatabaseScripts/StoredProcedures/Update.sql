@@ -7,6 +7,7 @@ USE HealthBlogDB
 CREATE PROCEDURE EditPost
 (
 	@PostID			int,
+
 	@CategoryID		int,
 	@UserID			nvarchar(128),
 	@Title			nvarchar(200),
@@ -35,6 +36,7 @@ GO
 CREATE PROCEDURE EditPage
 (
 	@StaticPageID	int,
+
 	@ButtonName		nvarchar(50),
 	@UserID			nvarchar(128),
 	@Body			nvarchar(MAX)
@@ -59,6 +61,7 @@ GO
 CREATE PROCEDURE PublishPost
 (
 	@PostID			int,
+
 	@HasSchedule	bit,
 	@StartDate		datetime,
 	@EndDate		datetime
@@ -71,7 +74,8 @@ UPDATE	Posts
 SET		DatePublished	 =		GetDate(), 
 		HasSchedule		 =		@HasSchedule, 
 		StartDate		 =		@StartDate, 
-		EndDate			 =		@EndDate
+		EndDate			 =		@EndDate,
+		IsPublished      =      1
 
 WHERE	PostID			 =	    @PostID
 
@@ -89,7 +93,8 @@ AS BEGIN
 	
 UPDATE	StaticPage
 
-SET		DatePublished	=	 GetDate()
+SET		DatePublished	=	 GetDate(),
+		IsPublished     =    1
 
 WHERE	StaticPageID	=	 @StaticPageID
 
