@@ -13,7 +13,7 @@ namespace FITernitiMVC.Models
         public string ImageUrl { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DatePublished { get; set; }
-        public bool ContainsSchedule { get; set; }
+        public bool HasSchedule { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public bool IsActive { get; set; }
