@@ -21,7 +21,7 @@ namespace FITlosophiMVC.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("HealthBlogDB", throwIfV1Schema: false)
         {
         }
 
