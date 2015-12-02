@@ -88,22 +88,31 @@ CREATE PROCEDURE PublishPost
 
 AS BEGIN
 
-INSERT INTO Posts
-(
-	DatePublished,
-	HasSchedule,
-	StartDate,
-	EndDate
-)
-VALUES
-(
-	GetDate(),
-	@HasSchedule,
-	@StartDate,
-	@EndDate
-)
+UPDATE Posts
 
-WHERE PostID = @PostID
+SET		DatePublished = GetDate(), 
+		HasSchedule = @HasSchedule, 
+		StartDate = @StartDate, 
+		EndDate = @EndDate
+
+WHERE	PostID = @PostID
 
 END 
+GO
+
+
+CREATE PROCEDURE PublishPage
+(
+	@StaticPageID	int
+)
+
+AS BEGIN
+
+UPDATE StaticPage
+
+SET		DatePublished = GetDate()
+
+WHERE	StaticPageID = @StaticPageID
+
+END
 GO
