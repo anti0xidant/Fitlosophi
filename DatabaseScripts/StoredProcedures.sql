@@ -1,3 +1,5 @@
+--Create Stored Procedures
+
 ------------------------------------------------------
 USE HealthBlogDB
 ------------------------------------------------------
@@ -77,7 +79,7 @@ SET @StaticPageID = SCOPE_IDENTITY();
 END
 GO
 
-
+-- Publish Post
 CREATE PROCEDURE PublishPost
 (
 	@PostID			int,
@@ -144,24 +146,31 @@ GO
 -- Add Tag
 CREATE PROCEDURE AddTag
 (
-	@TagName	nvarchar(1000)
+	@PostID		int,
+	@ActualHashTag	nvarchar(1000),
+	@PostXHashID int OUTPUT
 )
 
 AS BEGIN
 
 DECLARE @TagID AS INT
 
-SELECT @TagID = ht.TagID FROM HashTags ht WHERE LOWER(ht.TagName) = LOWER(@TagName)
+SELECT @TagID = ht.TagID FROM HashTags ht WHERE LOWER(ht.TagName) = LOWER(@ActualHashTag)
 
 IF @TagID IS NULL
    BEGIN
        INSERT INTO HashTags (TagName)
 	   
-	   VALUES (LOWER(@TagName))
+	   VALUES (LOWER(@ActualHashTag))
        
 	   SELECT @TagID = SCOPE_IDENTITY()
     END
-SELECT @TagID
+
+INSERT INTO PostXHash (PostID, TagID, ActualHashTag)
+
+VALUES (@PostID, @TagID, @ActualHashTag)
+
+SET @PostXHashID = SCOPE_IDENTITY()
 
 END
 GO

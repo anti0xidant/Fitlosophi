@@ -8,10 +8,12 @@ Title			nvarchar(200)
 CoverImgURL		nvarchar(2000)
 Body			nvarchar(MAX)	
 DateCreated		datetime
+DateModified		datetime
 DatePublished		datetime
 HasSchedule		bit
 StartDate		datetime
 EndDate			datetime
+IsPublished		int
 IsActive		bit
 
 Categories:
@@ -34,5 +36,7 @@ ButtonName		nvarchar(50)
 UserID			nvarchar(128)
 Body			nvarchar(max)
 DateCreated		datetime
+DateModified		datetime
 DatePublished		datetime
+IsPublished		bit
 IsActive		bit

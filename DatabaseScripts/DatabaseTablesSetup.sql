@@ -22,7 +22,7 @@
 	 DROP TABLE Posts
 	 DROP TABLE Categories
 	 DROP TABLE HashTags 
-
+	 DROP TABLE StaticPage
 	 GO
 
 --*************Step 4 - run this to create remaining tables  *************
@@ -57,10 +57,12 @@ CREATE TABLE Posts
 	CoverImgURL		nvarchar(2000)		NOT NULL,
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
+	DateModified	datetime,
 	DatePublished	datetime,
 	HasSchedule		bit,
 	StartDate		datetime,
 	EndDate			datetime,
+	IsPublished		bit,
 	IsActive		bit					NOT NULL,
 
 	CONSTRAINT FK_CategoryID	FOREIGN KEY (CategoryID)	REFERENCES	Categories	(CategoryID),
@@ -90,7 +92,9 @@ CREATE TABLE StaticPage
 	UserID			nvarchar(128)		NOT NULL,		
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
+	DateModified    datetime,
 	DatePublished	datetime,
+	IsPublished		bit,
 	IsActive		bit					NOT NULL,
 
 	CONSTRAINT FK_UserIDStatic		FOREIGN KEY (UserID)		REFERENCES	AspNetUsers (Id)	
