@@ -13,6 +13,7 @@ DatePublished		datetime
 HasSchedule		bit
 StartDate		datetime
 EndDate			datetime
+IsPublished		int
 IsActive		bit
 
 Categories:
@@ -37,4 +38,5 @@ Body			nvarchar(max)
 DateCreated		datetime
 DateModified		datetime
 DatePublished		datetime
+IsPublished		bit
 IsActive		bit

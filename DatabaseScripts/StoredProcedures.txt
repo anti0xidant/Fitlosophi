@@ -1,7 +1,104 @@
+==========================================================
+FITlosophi Stored Procedure Documentation
+==========================================================
 Stored Procedures:
+
 Create 	- 3
 Read 	- 7
 Update 	- 4
 Delete 	- 2
+==========================================================
+==========================================================
+CREATE:
 
-CREATE
+(1) AddPost
+	input(s):
+
+		CategoryID	int
+		UserID		nvarchar(128)
+		Title		nvarchar(200)
+		CoverImgURL	nvarchar(2000)
+		Body		nvarchar(MAX)
+
+	internal set(s):
+
+		DateCreated	datetime
+		IsPublished	0
+		IsActive	1
+
+	output(s):
+
+		PostID		int
+
+(2) AddStaticPage
+	input(s):
+	
+		ButtonName	nvarchar(50)
+		UserID		nvarchar(128)
+		Body		nvarchar(MAX)
+
+	internal set(s):
+
+		DateCreated	datetime
+		IsPublished	0
+		IsActive	1
+
+	output(s):
+	
+		StaticPageID	int
+==========================================================
+READ:
+==========================================================
+UPDATE:
+
+(1) EditPost
+	input(s):
+
+		PostID		int
+		CategoryID	int
+		UserID		nvarchar(128)
+		Title		nvarchar(200)
+		CoverImgURL	nvarchar(2000)
+		Body		nvarchar(MAX)
+
+	internal set(s):
+
+		DateModified	datetime
+
+(2) EditPage
+	input(s):
+
+		StaticPageID	int
+		ButtonName	nvarchar(50)
+		UserID		nvarchar(128)
+		Body		nvarchar(MAX)
+
+	internal set(s):
+
+		DateModified	datetime
+
+(3) PublishPost
+	input(s):
+
+		PostID		int
+		HasSchedule	bit
+		StartDate	datetime
+		EndDate		datetime
+
+	internal set(s):
+
+		DatePublished	datetime
+		IsPublished	1
+
+(4) PublishPage
+	intput(s):
+	
+		StaticPageID	int
+
+	internal set(s):
+
+		DatePublished	datetime
+		IsPublished	1
+==========================================================
+DELETE:
+==========================================================
