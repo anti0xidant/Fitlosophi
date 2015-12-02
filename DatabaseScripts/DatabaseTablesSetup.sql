@@ -57,6 +57,7 @@ CREATE TABLE Posts
 	CoverImgURL		nvarchar(2000)		NOT NULL,
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
+	DateModified	datetime,
 	DatePublished	datetime,
 	HasSchedule		bit,
 	StartDate		datetime,
@@ -90,6 +91,7 @@ CREATE TABLE StaticPage
 	UserID			nvarchar(128)		NOT NULL,		
 	Body			nvarchar(MAX)		NOT NULL,
 	DateCreated		datetime			NOT NULL,
+	DateModified    datetime,
 	DatePublished	datetime,
 	IsActive		bit					NOT NULL,
 
