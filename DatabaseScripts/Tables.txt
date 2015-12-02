@@ -8,6 +8,7 @@ Title			nvarchar(200)
 CoverImgURL		nvarchar(2000)
 Body			nvarchar(MAX)	
 DateCreated		datetime
+DateModified		datetime
 DatePublished		datetime
 HasSchedule		bit
 StartDate		datetime
