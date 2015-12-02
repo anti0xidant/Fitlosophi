@@ -1,36 +1,29 @@
-Posts:
-PostID
-CategoryID
-UserID
-Title
-CoverImgURL
-Body
-DateCreated
-DatePublished
-HasSchedule
-StartDate
-EndDate
-IsActive
+HealthBlogDB Tables
 
-Users:
-UserID
-FirstName
-LastName
-UserName
-Password
-Role
-Email
+Posts:
+PostID			int
+CategoryID		int
+UserID			nvarchar(128)
+Title			nvarchar(200)
+CoverImgURL		nvarchar(2000)
+Body			nvarchar(MAX)	
+DateCreated		datetime
+DatePublished		datetime
+HasSchedule		bit
+StartDate		datetime
+EndDate			datetime
+IsActive		bit
 
 Categories:
-CategoryId
-CategoryName
-
+CategoryId		int
+CategoryName		nvarchar(100)
+	
 HashTags:
-TagID
-TagName
+TagID			int
+TagName			nvarchar(1000)
 
 PostsXHash:
-PostsXHashID
-PostID
-TagID
-ActualHashTag
+PostsXHashID		int	
+PostID			int
+TagID			int
+ActualHashTag		nvarchar(1000)
