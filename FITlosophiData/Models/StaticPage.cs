@@ -7,7 +7,8 @@ namespace FITlosophiData.Models
 {
     public class StaticPage
     {
-        public int PageID { get; set; }
+        public int StaticPageID { get; set; }
+        public string UserID { get; set; }
         public string ButtonName { get; set; }
         public string Body { get; set; }
         public DateTime? DateCreated { get; set; }
