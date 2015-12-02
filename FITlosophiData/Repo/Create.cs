@@ -13,7 +13,6 @@ namespace FITlosophiData.Repo
 {
     public class Create
     {
-        // Add player to database. Player object is assigned a PlayerID
         public void AddPost(Post post)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
@@ -27,30 +26,37 @@ namespace FITlosophiData.Repo
                     p.Add("Title", post.Title);
                     p.Add("CoverImgURL", post.CoverImageUrl);
                     p.Add("Body", post.Body);
-                    p.Add("YearsPlayed", player.YearsPlayed);
-                    p.Add("PrimaryPositionID", player.PrimaryPositionID);
-                    p.Add("SecondaryPositionID", player.SecondaryPositionID);
                     p.Add("PlayerID", DbType.Int32, direction: ParameterDirection.Output);
 
-                    cn.Execute("AddPlayer", p, commandType: CommandType.StoredProcedure);
+                    cn.Execute("AddPost", p, commandType: CommandType.StoredProcedure);
 
-                    player.PlayerID = p.Get<int>("PlayerID");
+                    post.PostID = p.Get<int>("PostID");
                 }
-                //catch (Exception e)
-                //{
-                //    var ep = new DynamicParameters();
+                finally
+                {
+                    cn.Close();
+                }
 
-                //    ep.Add("ExceptionType", e.GetType());
-                //    ep.Add("ExceptionMessage", e.Message);
-                //    ep.Add("Input", String.Format("FirstName = {0}, LastName = {1}, JerseyNumber = {2}," +
-                //                                  "TeamID = {3}, LastYearBA = {4}, YearsPlayed = {5}, " +
-                //                                  "PrimaryPositionID = {6}, SecondaryPositionID = {7}",
-                //        player.FirstName, player.LastName, player.JerseyNumber,
-                //        player.TeamID, player.LastYearBA, player.YearsPlayed, player.PrimaryPositionID,
-                //        player.SecondaryPositionID));
-                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+            }
+        }
 
-                //}
+        public void AddStaticPage(StaticPage staticPage)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("ButtonName", staticPage.ButtonName);
+                    p.Add("UserID", staticPage.UserID);
+                    p.Add("Body", staticPage.Body);
+                    p.Add("StaticPageID", DbType.Int32, direction: ParameterDirection.Output);
+
+                    cn.Execute("AddStaticPage", p, commandType: CommandType.StoredProcedure);
+
+                    staticPage.StaticPageID = p.Get<int>("StaticPageID");
+                }
                 finally
                 {
                     cn.Close();
