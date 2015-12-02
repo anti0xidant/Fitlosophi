@@ -1,0 +1,7 @@
+Stored Procedures:
+Create 	- 3
+Read 	- 7
+Update 	- 4
+Delete 	- 2
+
+CREATE
