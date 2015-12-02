@@ -27,3 +27,12 @@ PostsXHashID		int
 PostID			int
 TagID			int
 ActualHashTag		nvarchar(1000)
+
+StaticPage:
+StaticPageID		int	
+ButtonName		nvarchar(50)
+UserID			nvarchar(128)
+Body			nvarchar(max)
+DateCreated		datetime
+DatePublished		datetime
+IsActive		bit
