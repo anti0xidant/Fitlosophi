@@ -1,6 +1,7 @@
 --Create Stored Procedures
 ------------------------------------------------------
 USE HealthBlogDB
+GO
 ------------------------------------------------------
 
 
@@ -79,7 +80,7 @@ VALUES
 	1
 )
 
-SET @StaticPageID = SCOPE_IDENTITY();
+SET @StaticPageID = SCOPE_IDENTITY()
 
 END
 GO
@@ -92,7 +93,7 @@ GO
 CREATE PROCEDURE AddTag
 (
 	@PostID		int,
-	@ActualHashTag	nvarchar(1000),
+	@ActualHashTag	nvarchar(1000)
 )
 
 AS BEGIN

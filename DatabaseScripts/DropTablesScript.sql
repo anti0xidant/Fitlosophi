@@ -9,13 +9,15 @@ DROP PROCEDURE
 
 	--Read,
 	GetAllCategories,
-	GetAllPages,
-	GetAllPosts,
+	GetAllPageSummaries,
+	GetAllPostSummaries,
 	GetAllPostsByCategory,
 	GetAllTags,
 	GetPageByID,
 	GetPostByID,
-	GetPostsByTags,
+	GetPostsByTagID,
+	GetPostsByAmount,
+	GetTagsByPostID,
 
 	--Update,
 	EditPost,
@@ -25,6 +27,16 @@ DROP PROCEDURE
 
 	--Delete
 	DeletePost,
-	DeletePage
+	DeletePage,
+	DeleteAllTagsByPostID
 
 GO
+
+--:r ~\StoredProcedures\Create.sql
+--GO
+--:r ~\StoredProcedures\Read.sql
+--GO
+--:r ~\StoredProcedures\Update.sql
+--GO
+--:r ~\StoredProcedures\Delete.sql
+--GO
