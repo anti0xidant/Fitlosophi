@@ -13,7 +13,7 @@ namespace FITlosophiData.Repo
 {
     public class Create
     {
-        public void AddPost(Post post)
+        public int? AddPost(Post post)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -26,18 +26,28 @@ namespace FITlosophiData.Repo
                     p.Add("Title", post.Title);
                     p.Add("CoverImgURL", post.CoverImageUrl);
                     p.Add("Body", post.Body);
-                    p.Add("PlayerID", DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("PostID", DbType.Int32, direction: ParameterDirection.Output);
 
                     cn.Execute("AddPost", p, commandType: CommandType.StoredProcedure);
 
                     post.PostID = p.Get<int>("PostID");
                 }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
                 finally
                 {
                     cn.Close();
                 }
 
             }
+            return post.PostID;
         }
 
         public void AddStaticPage(StaticPage staticPage)
@@ -57,6 +67,45 @@ namespace FITlosophiData.Repo
 
                     staticPage.StaticPageID = p.Get<int>("StaticPageID");
                 }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+
+            }
+        }
+
+        public void AddTag(int postID, HashTag hashTag)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("PostID", postID);
+                    p.Add("ActualHashTag", hashTag.ActualHashTag);
+
+                    cn.Execute("AddTag", p, commandType: CommandType.StoredProcedure);
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
                 finally
                 {
                     cn.Close();

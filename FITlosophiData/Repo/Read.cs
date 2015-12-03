@@ -13,39 +13,6 @@ namespace FITlosophiData.Repo
 {
     public class Read
     {
-        // Retrieves a list of all players that belong to a team
-        public List<Post> GetAllPostSummaries()
-        {
-            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
-            {
-                var posts = new List<Post>();
-
-                try
-                {
-                    posts =
-                        cn.Query<Post>("GetAllPostSummaries", commandType: CommandType.StoredProcedure).ToList();
-
-
-                }
-                //catch (Exception e)
-                //{
-                //    // Write failure to database
-                //    var ep = new DynamicParameters();
-
-                //    ep.Add("ExceptionType", e.GetType());
-                //    ep.Add("ExceptionMessage", e.Message);
-                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
-                //}
-                finally
-                {
-                    cn.Close();
-                }
-
-                return posts;
-            }
-        }
-
-
         public List<Category> GetAllCategories()
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
@@ -109,6 +76,37 @@ namespace FITlosophiData.Repo
             }
         }
 
+        // Retrieves a list of all players that belong to a team
+        public List<Post> GetAllPostSummaries()
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var posts = new List<Post>();
+
+                try
+                {
+                    posts =
+                        cn.Query<Post>("GetAllPostSummaries", commandType: CommandType.StoredProcedure).ToList();
+
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+
+                return posts;
+            }
+        }
 
         public List<HashTag> GetAllTags()
         {
@@ -277,7 +275,7 @@ namespace FITlosophiData.Repo
             }
         }
 
-        public List<Post> GetTagsByPostID(int postID)
+        public List<HashTag> GetTagsByPostID(int postID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -288,7 +286,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@PostID", postID);
                     hashTags =
-                        cn.Query<Post>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<HashTag>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -310,7 +308,38 @@ namespace FITlosophiData.Repo
             }
         }
 
+        public List<Post> GetPostsByAmount(int amount)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var posts = new List<Post>();
 
+                try
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Amount", amount);
+                    posts =
+                        cn.Query<Post>("GetPostsByAmount", commandType: CommandType.StoredProcedure).ToList();
+
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+
+                return posts;
+            }
+        }
 
 
     }
