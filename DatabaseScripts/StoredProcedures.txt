@@ -55,8 +55,12 @@ CREATE:
 		ActualHashTag	nvarchar(1000)
 
 	internal set(s):
-
+		
+		TagID		TagID
 		TagName		ActualHashTag.ToLower()
+
+	internal set(s): (On PostXHash Table)
+
 		PostID		PostID
 		TagID		TagID
 		ActualHashTag	ActualHashTag
@@ -274,7 +278,7 @@ DELETE:
 		IsActive	0
 		IsPublished	0
 
-(3) DelteAllTagsByPostID
+(3) DeleteAllTagsByPostID
 	input(s):
 	
 		PostID		int

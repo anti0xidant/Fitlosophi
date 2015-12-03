@@ -5,7 +5,7 @@ USE HealthBlogDB
 GO
 ------------------------------------------------------
 
-CREATE PROCEDURE GetAllCateGories 
+CREATE PROCEDURE GetAllCategories 
 
 AS BEGIN
 
@@ -65,7 +65,7 @@ GO
 
 ------------------------------------------------------
 
-CREATE PROCEDURE GetAllPostsByCateGory 
+CREATE PROCEDURE GetAllPostsByCategory 
 (
 	@CateGoryID		int
 )

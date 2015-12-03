@@ -21,15 +21,122 @@ namespace FITlosophiData.Repo
 
                 try
                 {
+                    p.Add("PostID", post.PostID);
+                    p.Add("CategoryID", post.CategoryID);
+                    p.Add("UserID", post.UserID);
+                    p.Add("Title", post.Title);
+                    p.Add("CoverImageUrl", post.CoverImageUrl);
+                    p.Add("Body", post.Body);
+                    p.Add("HasSchedule", post.HasSchedule);
+                    p.Add("StartDate", post.StartDate);
+                    p.Add("EndDate", post.EndDate);
+
+                    cn.Execute("EditPost", p, commandType: CommandType.StoredProcedure);
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        public void EditPage(StaticPage staticPage)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("StaticPageID", staticPage.StaticPageID);
                     p.Add("ButtonName", staticPage.ButtonName);
                     p.Add("UserID", staticPage.UserID);
                     p.Add("Body", staticPage.Body);
-                    p.Add("StaticPageID", DbType.Int32, direction: ParameterDirection.Output);
 
-                    cn.Execute("AddStaticPage", p, commandType: CommandType.StoredProcedure);
+                    cn.Execute("EditPage", p, commandType: CommandType.StoredProcedure);
 
-                    staticPage.StaticPageID = p.Get<int>("StaticPageID");
                 }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+            }
+
+        }
+
+        public void PublishPage(int staticPageID)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("StaticPageID", staticPageID);
+
+                    cn.Execute("PublishPage", p, commandType: CommandType.StoredProcedure);
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        public void PublishPost(Post post)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("PostID", post.PostID);
+                    p.Add("HasSchedule", post.HasSchedule);
+                    p.Add("StartDate", post.StartDate);
+                    p.Add("EndDate", post.EndDate);
+
+                    cn.Execute("PublishPost", p, commandType: CommandType.StoredProcedure);
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
                 finally
                 {
                     cn.Close();
