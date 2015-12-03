@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FITlosophiData.Models
 {
-    public class Tag
+    public class HashTag
     {
         public int TagID { get; set; }
-        public string TagName { get; set; }
+        public string ActualHashTag { get; set; }
     }
 }

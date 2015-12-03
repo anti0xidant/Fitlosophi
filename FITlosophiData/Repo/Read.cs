@@ -14,7 +14,7 @@ namespace FITlosophiData.Repo
     public class Read
     {
         // Retrieves a list of all players that belong to a team
-        public List<Post> GetAllPosts()
+        public List<Post> GetAllPostSummaries()
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -23,7 +23,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     posts =
-                        cn.Query<Post>("GetAllPosts", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetAllPostSummaries", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -78,7 +78,7 @@ namespace FITlosophiData.Repo
         }
 
 
-        public List<StaticPage> GetAllPages()
+        public List<StaticPage> GetAllPageSummaries()
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -87,7 +87,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     staticpages =
-                        cn.Query<StaticPage>("GetAllPages", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<StaticPage>("GetAllPageSummaries", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -110,16 +110,16 @@ namespace FITlosophiData.Repo
         }
 
 
-        public List<Tag> GetAllTags()
+        public List<HashTag> GetAllTags()
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
-                var tags = new List<Tag>();
+                var tags = new List<HashTag>();
 
                 try
                 {
                     tags =
-                        cn.Query<Tag>("GetAllTags", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<HashTag>("GetAllTags", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -142,7 +142,7 @@ namespace FITlosophiData.Repo
         }
 
 
-        public List<Post> GetAllPostsByCategory(string categoryname)
+        public List<Post> GetAllPostsByCategory(int categoryID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -151,12 +151,9 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@CategoryName", categoryname);
+                    p.Add("@CategoryID", categoryID);
                     posts =
                         cn.Query<Post>("GetAllPostsByCategory", commandType: CommandType.StoredProcedure).ToList();
-
-
-
 
                 }
                 //catch (Exception e)
@@ -212,7 +209,7 @@ namespace FITlosophiData.Repo
         }
 
 
-        public StaticPage GetPageByID(int pageid)
+        public StaticPage GetPageByID(int staticPageID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -221,7 +218,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@PageID", pageid);
+                    p.Add("@StaticPageID", staticPageID);
                     page =
                         cn.Query<StaticPage>("GetPageByID", commandType: CommandType.StoredProcedure).FirstOrDefault();
 
@@ -247,7 +244,7 @@ namespace FITlosophiData.Repo
 
 
 
-        public List<Post> GetPostsByTag(string tagname)
+        public List<Post> GetPostsByTagID(int tagID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -256,9 +253,9 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@TagName", tagname);
+                    p.Add("@TagID", tagID);
                     posts =
-                        cn.Query<Post>("GetPostsByTags", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetPostsByTagID", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -277,6 +274,39 @@ namespace FITlosophiData.Repo
                 }
 
                 return posts;
+            }
+        }
+
+        public List<Post> GetTagsByPostID(int postID)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var hashTags = new List<HashTag>();
+
+                try
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@PostID", postID);
+                    hashTags =
+                        cn.Query<Post>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
+
+
+                }
+                //catch (Exception e)
+                //{
+                //    // Write failure to database
+                //    var ep = new DynamicParameters();
+
+                //    ep.Add("ExceptionType", e.GetType());
+                //    ep.Add("ExceptionMessage", e.Message);
+                //    cn.Execute("AddError", ep, commandType: CommandType.StoredProcedure);
+                //}
+                finally
+                {
+                    cn.Close();
+                }
+
+                return hashTags;
             }
         }
 

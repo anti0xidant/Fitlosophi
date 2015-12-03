@@ -24,5 +24,6 @@ namespace FITlosophiData.Models
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string WriterName { get; set; }
+        public List<HashTag> HashTags { get; set; }
     }
 }
