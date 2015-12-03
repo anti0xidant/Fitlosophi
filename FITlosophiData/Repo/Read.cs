@@ -277,7 +277,7 @@ namespace FITlosophiData.Repo
             }
         }
 
-        public List<Post> GetTagsByPostID(int postID)
+        public List<HashTag> GetTagsByPostID(int postID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -288,7 +288,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@PostID", postID);
                     hashTags =
-                        cn.Query<Post>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<HashTag>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
 
 
                 }

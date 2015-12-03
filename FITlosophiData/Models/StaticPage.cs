@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FITlosophiData.Models
 {
@@ -10,6 +11,7 @@ namespace FITlosophiData.Models
         public int StaticPageID { get; set; }
         public string UserID { get; set; }
         public string ButtonName { get; set; }
+        [AllowHtml]
         public string Body { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DatePublished { get; set; }
