@@ -40,13 +40,72 @@ namespace FITlosophiBLL
 
         #region Read
 
+        public List<Category> GetAllCategories()
+        {
+            var read = new FITlosophiOperations();
 
+            return read.GetAllCategories();
+        }
+
+        public List<StaticPage> GetAllPageSummaries()
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetAllPageSummaries();
+        }
+
+        public List<HashTag> GetAllTags()
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetAllTags();
+        }
+
+        public StaticPage GetPageByID(int staticPageID)
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetPageByID(staticPageID);
+        }
+
+        public List<HashTag> GetTagsByPostId(int postID)
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetTagsByPostId(postID);
+        }
 
         #endregion
 
         #region Update
 
+        public void EditPage(StaticPage staticPage)
+        {
+            var update = new FITlosophiOperations();
 
+            update.EditPage(staticPage);
+        }
+
+        public void EditPost(Post post)
+        {
+            var update = new FITlosophiOperations();
+
+            update.EditPost(post);
+        }
+
+        public void PublishPage(StaticPage staticPage)
+        {
+            var update = new FITlosophiOperations();
+
+            update.PublishPage(staticPage);
+        }
+
+        public void PublishPost(Post post)
+        {
+            var update = new FITlosophiOperations();
+
+            update.PublishPost(post);
+        }
 
         #endregion
 
