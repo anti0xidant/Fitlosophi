@@ -24,7 +24,7 @@ namespace FITlosophiData.Repo
                     p.Add("CategoryID", post.CategoryID);
                     p.Add("UserID", post.UserID);
                     p.Add("Title", post.Title);
-                    p.Add("CoverImgURL", post.CoverImageUrl);
+                    p.Add("CoverImgURL", post.CoverImgURL);
                     p.Add("Body", post.Body);
                     p.Add("PostID", DbType.Int32, direction: ParameterDirection.Output);
 
