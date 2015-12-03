@@ -87,33 +87,33 @@ GO
 
 -----------------------------------------------------------
 
-
------------------------------------------------------------
-
 CREATE PROCEDURE AddTag
 (
-	@PostID		int,
+	@PostID			int,
 	@ActualHashTag	nvarchar(1000)
 )
 
 AS BEGIN
 
-DECLARE @TagID AS INT
+DECLARE	 @TagID AS INT
 
-SELECT @TagID = ht.TagID FROM HashTags ht WHERE LOWER(ht.TagName) = LOWER(@ActualHashTag)
+SELECT	 @TagID = ht.TagID FROM HashTags ht WHERE LOWER(ht.TagName) = LOWER(@ActualHashTag)
 
 IF @TagID IS NULL
+
    BEGIN
+
        INSERT INTO HashTags (TagName)
 	   
 	   VALUES (LOWER(@ActualHashTag))
        
 	   SELECT @TagID = SCOPE_IDENTITY()
-    END
 
-INSERT INTO PostXHash (PostID, TagID, ActualHashTag)
+   END
 
-VALUES (@PostID, @TagID, @ActualHashTag)
+INSERT INTO PostXHash	(PostID, TagID, ActualHashTag)
+
+VALUES					(@PostID, @TagID, @ActualHashTag)
 
 END
 GO

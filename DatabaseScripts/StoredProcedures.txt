@@ -4,9 +4,9 @@ FITlosophi Stored Procedure Documentation
 Stored Procedures:
 
 Create 	- 3
-Read 	- 7
+Read 	- 10
 Update 	- 4
-Delete 	- 2
+Delete 	- 3
 ==========================================================
 ==========================================================
 CREATE:
@@ -23,6 +23,7 @@ CREATE:
 	internal set(s):
 
 		DateCreated	datetime
+		HasSchedule	0
 		IsPublished	0
 		IsActive	1
 
@@ -46,8 +47,156 @@ CREATE:
 	output(s):
 	
 		StaticPageID	int
+
+(3) AddTag
+	input(s):
+
+		PostID		int
+		ActualHashTag	nvarchar(1000)
+
+	internal set(s):
+
+		TagName		ActualHashTag.ToLower()
+		PostID		PostID
+		TagID		TagID
+		ActualHashTag	ActualHashTag
 ==========================================================
 READ:
+
+(1) GetAllCategories
+	output(s):
+		
+		CategoryID	int
+		CategoryName	nvarchar(100)
+
+(2) GetAllPageSummaries
+	output(s):
+	
+		StaticPageID	int
+		ButtonName	nvarchar(50)
+		Body		nvarchar(MAX)
+		DateCreated	datetime
+		DatePublished	datetime
+		IsActive	bit
+		IsPublished	bit
+		WriterName	string
+
+(3) GetAllPostSummaries
+	output(s):
+
+		PostID		int
+		Title		nvarchar(200)
+		DateCreated	datetime
+		DatePublished	datetime
+		IsActive	bit
+		IsPublished	bit
+		WriterName	string
+		CategoryID	int
+		CategoryName	nvarchar(100)
+
+(4) GetAllPostsByCategory
+	output(s):
+
+		PostID		int
+		Title		nvarchar(200)
+		Body		nvarchar(MAX)
+		CoverImgURL	nvarchar(2000)
+		DatePublished	datetime
+		HasSchedule	bit
+		StartDate	datetime
+		EndDate		datetime
+		WriterName	string
+		CategoryID	int
+		CategoryName	nvarchar(100)
+
+(5) GetAllTags
+	output(s):
+
+		TagID		int
+		TagName		nvarchar(1000)
+
+(6) GetPageByID
+	input(s):
+	
+		StaticPageID	int
+	
+	output(s):
+
+		StaticPageID	int
+		ButtonName	nvarchar(50)
+		Body		nvarchar(MAX)
+		DateCreated	datetime
+		DatePublished	datetime
+		WriterName	string
+
+(7) GetPostByID
+	input(s):
+
+		PostID		int
+
+	output(s):
+
+		PostID		int
+		Title		nvarchar(200)
+		CoverImgURL	nvarchar(2000)
+		Body		nvarchar(MAX)
+		DateCreated	datetime
+		DatePublished	datetime
+		HasSchedule	bit
+		StartDate	datetime	
+		EndDate		datetime
+		IsActive	bit
+		WriterName	string
+		CategoryID	int
+		CategoryName	nvarchar(100)
+
+(8) GetPostsByTagID
+	input(s):
+
+		TagID		int
+
+	output(s):
+
+		PostID		int
+		Title		nvarchar(200)
+		CoverImgURL	nvarchar(2000)
+		DatePublished	datetime
+		HasSchedule	bit
+		StartDate	datetime
+		EndDate		datetime
+		WriterName	string
+		CategoryID	int
+		CategoryName	nvarchar(100)
+
+(9) GetTagsByPostID
+	intput(s):
+
+		PostID		int
+
+	output(s):
+
+		TagID		int
+		ActualHashTag	nvarchar(1000)
+
+(10) GetPostsByAmount
+	input(s):
+	
+		Amount		int
+
+	output(s):
+
+		PostID		int
+		Title		nvarchar(200)
+		Body		nvarchar(MAX)
+		CoverImgURL	nvarchar(2000)
+		DatePublished	datetime
+		HasSchedule	bit
+		StartDate	datetime
+		EndDate		datetime
+		WriterName	string
+		CategoryID	int
+		CategoryName	nvarchar(100)
+		
 ==========================================================
 UPDATE:
 
@@ -60,6 +209,9 @@ UPDATE:
 		Title		nvarchar(200)
 		CoverImgURL	nvarchar(2000)
 		Body		nvarchar(MAX)
+		HasSchedule	bit
+		StartDate	datetime
+		EndDate		datetime
 
 	internal set(s):
 
@@ -101,4 +253,29 @@ UPDATE:
 		IsPublished	1
 ==========================================================
 DELETE:
+
+(1) DeletePost
+	input(s):
+
+		PostID		int
+
+	internal set(s):
+
+		IsActive	0
+		IsPublished	0
+
+(2) DeletePage
+	input(s):
+
+		StaticPageID	int
+
+	internal set(s):
+	
+		IsActive	0
+		IsPublished	0
+
+(3) DelteAllTagsByPostID
+	input(s):
+	
+		PostID		int
 ==========================================================

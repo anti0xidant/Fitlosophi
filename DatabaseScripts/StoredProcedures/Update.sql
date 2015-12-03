@@ -22,7 +22,7 @@ CREATE PROCEDURE EditPost
 AS BEGIN
 
 UPDATE	Posts
-
+	
 SET	    CategoryID	    =	@CategoryID,
 		UserID		    =	@UserID,
 		Title		    =	@Title,

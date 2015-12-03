@@ -5,181 +5,258 @@ USE HealthBlogDB
 GO
 ------------------------------------------------------
 
-Create procedure [dbo].[GetAllCategories] as 
+CREATE PROCEDURE GetAllCateGories 
 
-Begin
+AS BEGIN
 
-Select c.CategoryID, c.CategoryName
+SELECT	CategoryID, 
+		CateGoryName
 
-from Categories c
+FROM Categories 
 
-End 
-
+END 
 GO
 
 ------------------------------------------------------
-Create procedure [dbo].[GetAllPageSummaries] as
+CREATE PROCEDURE GetAllPageSummaries 
 
-Begin 
+AS BEGIN 
 
-select s.StaticPageID, s.ButtonName, s.Body, s.DateCreated, s.DatePublished, s.IsActive, s.IsPublished, u.FirstName+ ' ' + u.LastName as WriterName
-from StaticPage s
-inner join AspNetUsers u
-on s.UserID = u.Id
+SELECT	s.StaticPageID, 
+		s.ButtonName, 
+		s.Body, 
+		s.DateCreated, 
+		s.DatePublished, 
+		s.IsActive, 
+		s.IsPublished, 
+		u.FirstName + ' ' + u.LAStName AS WriterName
 
-End
+FROM StaticPage s
+	INNER JOIN	ASpNetUsers u 
+		ON s.UserID = u.Id
 
+END
 GO
 
 ------------------------------------------------------
 --For Management View
-CREATE procedure [dbo].[GetAllPostSummaries] as
+CREATE PROCEDURE GetAllPostSummaries
 
-Begin
+AS BEGIN
 
-Select p.PostID, p.Title, p.DateCreated, p.DatePublished, p.IsActive, p.IsPublished, u.FirstName+' '+u.LastName as WriterName, c.CategoryID, c.CategoryName
-from Posts as P
-inner join Categories C
-on P.CategoryID = C.CategoryID
-inner join AspNetUsers U
-on P.UserID = U.Id
+SELECT	p.PostID, 
+		p.Title, 
+		p.DateCreated, 
+		p.DatePublished, 
+		p.IsActive, 
+		p.IsPublished,	
+		u.FirstName+' '+u.LastName AS WriterName, 
+		c.CateGoryID, 
+		c.CateGoryName
 
-End
+FROM Posts AS p
+	INNER JOIN Categories c
+		ON p.CategoryID	 =	 c.CategoryID
+	INNER JOIN ASpNetUsers u
+		ON p.UserID		 =	 u.Id
 
+END 
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetAllPostsByCategory] (
-@CategoryID int
+CREATE PROCEDURE GetAllPostsByCateGory 
+(
+	@CateGoryID		int
 )
-as
 
-Begin
+AS BEGIN
 
-select p.PostID, p.Title, p.Body, p.CoverImgURL, p.DatePublished, p.HasSchedule, p.StartDate, p.EndDate, u.FirstName+ ' ' + u.LastName as WriterName, c.CategoryID, c.CategoryName
-from Posts p
-inner join AspNetUsers u
-on p.UserID = u.Id
-inner join Categories c
-on p.CategoryID = c.CategoryID
-where c.CategoryID = @CategoryID and p.IsActive = 1 and p.IsPublished = 1
+SELECT	p.PostID, 
+		p.Title, 
+		p.Body, 
+		p.CoverImgURL, 
+		p.DatePublished, 
+		p.HasSchedule, 
+		p.StartDate, 
+		p.EndDate, 
+		u.FirstName + ' ' + u.LAStName AS WriterName, 
+		c.CateGoryID, 
+		c.CateGoryName
 
-End
+FROM Posts p
+	INNER JOIN ASpNetUsers u
+		ON p.UserID		= u.Id
+	INNER JOIN CateGories c
+		ON p.CateGoryID = c.CateGoryID
 
+WHERE	c.CateGoryID	=	@CateGoryID		and 
+		p.IsActive		=	1				and 
+		p.IsPublished   =	1
+
+END
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetAllTags] as
+CREATE PROCEDURE GetAllTags 
 
-Begin
+AS BEGIN
 
-Select t.TagID, t.TagName
+SELECT	TagID, 
+		TagName
 
-from HashTags t
+FROM HashTags 
 
-End
-
+END
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetPageByID] (
-@StaticPageID int
-)as
+CREATE PROCEDURE GetPageByID 
+(
+	@StaticPageID	int
+)
 
-Begin 
+AS BEGIN 
 
-Select s.StaticPageID, s.ButtonName, s.Body, s.DateCreated, s.DatePublished, u.FirstName + ' ' + u.LastName as WriterName
-from StaticPage s
-inner join AspNetUsers u
-on s.UserID = u.Id
-where s.StaticPageID = @StaticPageID
+SELECT	s.StaticPageID, 
+		s.ButtonName, 
+		s.Body, 
+		s.DateCreated, 
+		s.DatePublished, 
+		u.FirstName + ' ' + u.LastName AS WriterName
 
-End 
+FROM StaticPage s
+	INNER JOIN ASpNetUsers u
+		ON s.UserID = u.Id
 
+WHERE s.StaticPageID = @StaticPageID
+
+END 
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetPostByID] (
-@PostID int)
-as
+CREATE PROCEDURE GetPostByID 
+(
+	@PostID		int
+)
 
-Begin 
+AS BEGIN 
 
-select p.PostID, p.Title, p.CoverImgURL, p.Body, p.DateCreated, p.DatePublished, p.HasSchedule, p.StartDate, p.EndDate, p.IsActive, u.FirstName+ ' ' + u.LastName as WriterName, c.CategoryID, c.CategoryName
-from Posts p
-inner join AspNetUsers u
-on p.UserID = u.id
-inner join Categories c
-on p.CategoryID= c.CategoryID
-where p.PostID = @PostID
+SELECT	p.PostID, 
+		p.Title, 
+		p.CoverImgURL, 
+		p.Body, 
+		p.DateCreated, 
+		p.DatePublished, 
+		p.HasSchedule, 
+		p.StartDate, 
+		p.EndDate, 
+		p.IsActive, 
+		u.FirstName + ' ' + u.LastName AS WriterName, 
+		c.CategoryID, 
+		c.CategoryName
 
-End 
+FROM Posts p
+	INNER JOIN ASpNetUsers u
+		ON p.UserID		=	u.id
+	INNER JOIN CateGories c
+		ON p.CategoryID	=	c.CategoryID
 
+WHERE p.PostID = @PostID
+
+END 
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetPostsByTagID] (
-@TagID int
-) as
+CREATE PROCEDURE GetPostsByTagID 
+(
+	@TagID		int
+) 
 
-Begin
+AS BEGIN
 
-select p.PostID, p.Title, p.Body, p.CoverImgURL, p.DatePublished, p.HasSchedule, p.StartDate, p.EndDate, u.FirstName+ ' ' + u.LastName as WriterName, c.CategoryID, c.CategoryName
+SELECT	p.PostID, 
+		p.Title, 
+		p.Body, 
+		p.CoverImgURL, 
+		p.DatePublished, 
+		p.HasSchedule, 
+		p.StartDate, 
+		p.EndDate, 
+		u.FirstName + ' ' + u.LastName AS WriterName, 
+		c.CateGoryID, 
+		c.CateGoryName
 
-From Posts p
-inner join AspNetUsers u
-on p.UserID = u.Id
-inner join Categories c
-on p.CategoryID = c.CategoryID
-inner join PostsXHash ph
-on p.PostID = ph.PostID
-where ph.TagID = @TagID and p.IsActive = 1 and p.IsPublished = 1
+FROM Posts p
+	INNER JOIN ASpNetUsers u
+		ON p.UserID			=	u.Id
+	INNER JOIN CateGories c
+		ON p.CateGoryID		=	c.CateGoryID
+	INNER JOIN PostsXHash ph
+		ON p.PostID			=	ph.PostID
 
-End
+WHERE	ph.TagID		=		@TagID		and 
+		p.IsActive		=		1			and 
+		p.IsPublished	=		1
 
+END
 GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetTagsByPostID] (
-@PostID int
-) as
+CREATE PROCEDURE GetTagsByPostID
+(
+	@PostID		int
+) 
 
-Begin
+AS BEGIN
 
-select ph.TagID, ph.ActualHashTag
+SELECT	TagID, 
+		ActualHashTag
 
-From PostsXHash ph
-where ph.PostID = @PostID
+FROM PostsXHASh ph
 
-End
+WHERE PostID = @PostID
 
-Go
+END
+GO
 
 ------------------------------------------------------
 
-Create procedure [dbo].[GetPostsByAmount] (
-@Amount int
-) as
+CREATE PROCEDURE GetPostsByAmount 
+(
+	@Amount	 int
+) 
 
-Begin
+AS BEGIN
 
-Select Top(@Amount) p.PostID, p.Title, p.Body, p.CoverImgURL, p.DatePublished, p.HasSchedule, p.StartDate, p.EndDate, u.FirstName+ ' ' + u.LastName as WriterName, c.CategoryID, c.CategoryName
+SELECT TOP(@Amount) 
+		p.PostID, 
+		p.Title, 
+		p.Body, 
+		p.CoverImgURL, 
+		p.DatePublished, 
+		p.HasSchedule, 
+		p.StartDate, 
+		p.EndDate, 
+		u.FirstName + ' ' + u.LastName AS WriterName, 
+		c.CateGoryID, 
+		c.CateGoryName
 
-From Posts p
+FROM Posts p
+	INNER JOIN ASpNetUsers u
+		ON p.UserID			=	u.Id
+	INNER JOIN CateGories c
+		ON p.CateGoryID		=	c.CateGoryID
 
-inner join AspNetUsers u
-on p.UserID = u.Id
-inner join Categories c
-on p.CategoryID = c.CategoryID
-where p.IsActive = 1 and p.IsPublished = 1
-order by p.DatePublished desc
+WHERE		p.IsActive		=	1	and 
+			p.IsPublished	=	1
 
-End
+ORDER BY	p.DatePublished		DESC
 
-Go
+END
+GO
