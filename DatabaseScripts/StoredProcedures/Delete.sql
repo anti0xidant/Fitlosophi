@@ -4,9 +4,6 @@ USE HealthBlogDB
 GO
 ------------------------------------------------------
 
-
-
--- Delete Post 
 CREATE PROCEDURE DeletePost
 (
 	@PostID			int
@@ -14,30 +11,31 @@ CREATE PROCEDURE DeletePost
 
 AS BEGIN
 
-UPDATE Posts 
+UPDATE	Posts 
 
-SET		IsActive	=	0, 
-		IsPublished =	0
-WHERE   PostID		=	 @PostID
+SET		IsActive		=	 0, 
+		IsPublished		=	 0
+
+WHERE   PostID			=	 @PostID
 
 END 
 GO
 
 ------------------------------------------------------
 
--- Delete Page
 CREATE PROCEDURE DeletePage
 (
-	@StaticPageID	int
+	@StaticPageID		int
 )
 
 AS BEGIN
 
-UPDATE StaticPage 
+UPDATE	 StaticPage 
 
-SET		IsActive		=	 0, 
-		IsPublished		=	 0
-WHERE   StaticPageID	=	 @StaticPageID
+SET		 IsActive			=	 0, 
+		 IsPublished		=	 0
+				
+WHERE    StaticPageID		=	 @StaticPageID
 
 END 
 GO
@@ -46,13 +44,14 @@ GO
 
 CREATE PROCEDURE DeleteAllTagsByPostID
 (
-	@PostID	int
+	@PostID		int
 )
 
 AS BEGIN
 
 DELETE FROM PostsXHash 
-WHERE PostID = @PostID
+
+WHERE		PostID	 =	 @PostID
 
 END
 GO
