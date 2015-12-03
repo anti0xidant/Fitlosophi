@@ -8,16 +8,6 @@
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
 
-<<<<<<< HEAD
-    @*<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 3, from LayoutIt!</title>
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">*@
-=======
 
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="~/Content/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -39,7 +29,6 @@
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script>window.jQuery || document.write('<script src="~/Content/node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
->>>>>>> d0720566848d1a97f6b396378617dc2a158786f9
 
 </head>
 <body>
@@ -131,26 +120,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-<<<<<<< HEAD
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
-    @*<script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>*@
-
-=======
-    </div>*@
+*@
 
     <footer>
         <div class="widewrapper footer">
@@ -193,7 +163,7 @@
         </div>
         <div class="widewrapper copyright">
             <div class="container">
-                Designed by <a href="http://hackerthemes.com">HackerThemes</a>
+                <p>&copy; @DateTime.Now.Year - FITlosophi</p>
             </div>
         </div>
     </footer>
@@ -202,7 +172,6 @@
 
 
 @RenderSection("scripts", required: false)
->>>>>>> d0720566848d1a97f6b396378617dc2a158786f9
 </body>
 
 </html>
