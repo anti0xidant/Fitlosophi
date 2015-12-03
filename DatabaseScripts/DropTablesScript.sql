@@ -32,11 +32,11 @@ DROP PROCEDURE
 
 GO
 
---:r ~\StoredProcedures\Create.sql
---GO
---:r ~\StoredProcedures\Read.sql
---GO
---:r ~\StoredProcedures\Update.sql
---GO
---:r ~\StoredProcedures\Delete.sql
---GO
+:r C:\_repos\FITlosophi\DatabaseScripts\StoredProcedures\Create.sql
+GO
+:r C:\_repos\FITlosophi\DatabaseScripts\StoredProcedures\Read.sql
+GO
+:r C:\_repos\FITlosophi\DatabaseScripts\StoredProcedures\Update.sql
+GO
+:r C:\_repos\FITlosophi\DatabaseScripts\StoredProcedures\Delete.sql
+GO
