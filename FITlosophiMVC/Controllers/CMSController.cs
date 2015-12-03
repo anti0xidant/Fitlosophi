@@ -20,8 +20,12 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+
+
         public ActionResult AddPage()
         {
+
+
             return View();
         }
 

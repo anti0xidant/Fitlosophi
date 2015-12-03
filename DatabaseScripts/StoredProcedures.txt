@@ -3,7 +3,7 @@ FITlosophi Stored Procedure Documentation
 ==========================================================
 Stored Procedures:
 
-Create 	- 3
+Create 	- 4
 Read 	- 10
 Update 	- 4
 Delete 	- 3
@@ -64,6 +64,11 @@ CREATE:
 		PostID		PostID
 		TagID		TagID
 		ActualHashTag	ActualHashTag
+
+(4) AddNewCategory
+	intput(s):
+
+		CategoryName	nvarchar(100)
 ==========================================================
 READ:
 

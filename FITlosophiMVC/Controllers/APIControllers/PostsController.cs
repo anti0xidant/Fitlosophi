@@ -11,22 +11,30 @@ namespace FITlosophiMVC.Controllers.APIControllers
 {
     public class PostsController : ApiController
     {
-        [HttpGet]
-        [ActionName("GetAllPostsByAmount")]
-        public List<Post> GetAllPostsByAmount(int amount)
+        #region Get
+
+        public List<Post> Get(int amount)
         {
             var read = new FITlosophiOperations();
 
             return read.GetPostsByAmount(amount);
         }
 
-        [HttpPost]
-        [ActionName("AddPost")]
-        public void AddPost(Post post)
+        #endregion
+
+        #region Post
+        
+        public void Post(Post post)
         {
             var create = new FITlosophiOperations();
 
             create.AddPost(post);
         }
+
+        #endregion
+
+
+
+
     }
 }
