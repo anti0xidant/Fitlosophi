@@ -173,7 +173,7 @@ namespace FITlosophiData.Repo
         }
 
 
-        public Post GetPostByID(int postid)
+        public Post GetPostByID(int postID)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -182,7 +182,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@PostID", postid);
+                    p.Add("@PostID", postID);
                     post =
                         cn.Query<Post>("GetPostByID", commandType: CommandType.StoredProcedure).FirstOrDefault();
 

@@ -24,7 +24,6 @@ AS BEGIN
 
 SELECT	s.StaticPageID, 
 		s.ButtonName, 
-		s.Body, 
 		s.DateCreated, 
 		s.DatePublished, 
 		s.IsActive, 

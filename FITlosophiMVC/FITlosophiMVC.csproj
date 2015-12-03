@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\APIControllers\PostsController.cs" />
     <Compile Include="Controllers\CMSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -507,6 +508,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FITlosophiBLL\FITlosophiBLL.csproj">
+      <Project>{c11bd340-d79b-4ddf-8daa-667487fd7545}</Project>
+      <Name>FITlosophiBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FITlosophiData\FITlosophiData.csproj">
       <Project>{88f0e861-471d-42cb-bdca-50797637f57b}</Project>
       <Name>FITlosophiData</Name>
