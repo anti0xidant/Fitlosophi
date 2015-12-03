@@ -119,3 +119,22 @@ END
 GO
 
 -----------------------------------------------------------
+
+CREATE PROCEDURE AddNewCategory
+(
+	@CategoryName nvarchar(100)
+)
+
+AS BEGIN
+
+INSERT INTO Categories 
+(
+	CategoryName
+)
+VALUES
+(
+	@CategoryName
+)
+
+END
+GO

@@ -15,7 +15,7 @@ namespace FITlosophiData.Models
         public string Title { get; set; }
         [AllowHtml]
         public string Body { get; set; }
-        public string CoverImageUrl { get; set; }
+        public string CoverImgURL { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DatePublished { get; set; }
         public bool HasSchedule { get; set; }
