@@ -18,5 +18,21 @@ namespace FITlosophiMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult AddPage()
+        {
+            return View();
+        }
+
+        public ActionResult ManagePosts()
+        {
+            return View();
+        }
+
+        public ActionResult ManagePages()
+        {
+            return View();
+        }
+
     }
 }
