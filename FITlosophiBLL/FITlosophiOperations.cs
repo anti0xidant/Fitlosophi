@@ -42,38 +42,37 @@ namespace FITlosophiBLL
 
         public List<Category> GetAllCategories()
         {
-            var read = new FITlosophiOperations();
-
+            var read = new Read();
+            
             return read.GetAllCategories();
         }
 
         public List<StaticPage> GetAllPageSummaries()
         {
-            var read = new FITlosophiOperations();
+            var read = new Read();
 
             return read.GetAllPageSummaries();
         }
 
         public List<HashTag> GetAllTags()
         {
-            var read = new FITlosophiOperations();
+            var read = new Read();
 
             return read.GetAllTags();
         }
 
         public StaticPage GetPageByID(int staticPageID)
         {
-            var read = new FITlosophiOperations();
+            var read = new Read();
 
             return read.GetPageByID(staticPageID);
         }
 
         public List<HashTag> GetTagsByPostId(int postID)
         {
-            var read = new FITlosophiOperations();
+            var read = new Read();
 
-<<<<<<< HEAD
-            return read.GetTagsByPostId(postID);
+            return read.GetTagsByPostID(postID);
         }
 
         public List<Post> GetAllPostSummaries()
@@ -141,28 +140,28 @@ namespace FITlosophiBLL
 
         public void EditPage(StaticPage staticPage)
         {
-            var update = new FITlosophiOperations();
+            var update = new Update();
 
             update.EditPage(staticPage);
         }
 
         public void EditPost(Post post)
         {
-            var update = new FITlosophiOperations();
+            var update = new Update();
 
             update.EditPost(post);
         }
 
-        public void PublishPage(StaticPage staticPage)
+        public void PublishPage(int staticPageID)
         {
-            var update = new FITlosophiOperations();
+            var update = new Update();
 
-            update.PublishPage(staticPage);
+            update.PublishPage(staticPageID);
         }
 
         public void PublishPost(Post post)
         {
-            var update = new FITlosophiOperations();
+            var update = new Update();
 
             update.PublishPost(post);
         }

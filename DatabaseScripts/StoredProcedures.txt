@@ -78,7 +78,6 @@ READ:
 	
 		StaticPageID	int
 		ButtonName	nvarchar(50)
-		Body		nvarchar(MAX)
 		DateCreated	datetime
 		DatePublished	datetime
 		IsActive	bit
