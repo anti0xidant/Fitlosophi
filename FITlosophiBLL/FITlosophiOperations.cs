@@ -36,6 +36,13 @@ namespace FITlosophiBLL
             create.AddStaticPage(staticPage);
         }
 
+        public void AddNewCategory(Category category)
+        {
+            var create = new Create();
+
+            create.AddNewCategory(category);
+        }
+
         #endregion
 
         #region Read

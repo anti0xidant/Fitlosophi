@@ -113,5 +113,24 @@ namespace FITlosophiData.Repo
 
             }
         }
+
+        public void AddNewCategory(Category category)
+        {
+            using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
+            {
+                var p = new DynamicParameters();
+
+                try
+                {
+                    p.Add("CategoryName", category.CategoryName);
+
+                    cn.Execute("AddNewCategory", p, commandType: CommandType.StoredProcedure);
+                }
+                finally
+                {
+                    cn.Close();
+                }
+            }
+        }
     }
 }

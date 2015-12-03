@@ -11,6 +11,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
 {
     public class PostsController : ApiController
     {
+        #region Get
+
         [HttpGet]
         [ActionName("GetAllPostsByAmount")]
         public List<Post> GetAllPostsByAmount(int amount)
@@ -20,6 +22,10 @@ namespace FITlosophiMVC.Controllers.APIControllers
             return read.GetPostsByAmount(amount);
         }
 
+        #endregion
+
+        #region Post
+
         [HttpPost]
         [ActionName("AddPost")]
         public void AddPost(Post post)
@@ -28,5 +34,11 @@ namespace FITlosophiMVC.Controllers.APIControllers
 
             create.AddPost(post);
         }
+
+        #endregion
+
+
+
+
     }
 }
