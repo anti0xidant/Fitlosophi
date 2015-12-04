@@ -15,13 +15,15 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+
+        [Authorize]
         public ActionResult AddPost()
         {
             return View();
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult AddPage()
         {
 
@@ -29,11 +31,14 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult ManagePosts()
         {
             return View();
         }
 
+
+        [Authorize(Roles = "Admin")]
         public ActionResult ManagePages()
         {
             return View();
