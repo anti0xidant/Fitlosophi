@@ -111,7 +111,7 @@ IF @TagID IS NULL
 
    END
 
-INSERT INTO PostXHash	(PostID, TagID, ActualHashTag)
+INSERT INTO PostsXHash	(PostID, TagID, ActualHashTag)
 
 VALUES					(@PostID, @TagID, @ActualHashTag)
 

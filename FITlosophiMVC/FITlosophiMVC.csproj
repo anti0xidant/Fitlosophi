@@ -183,7 +183,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\CategoriesController.cs" />
-    <Compile Include="Controllers\APIControllers\PostsController.cs" />
+    <Compile Include="Controllers\APIControllers\PostsAdminController.cs" />
+    <Compile Include="Controllers\APIControllers\PostsPublicController.cs" />
     <Compile Include="Controllers\CMSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -211,6 +212,8 @@
     <Content Include="Content\css\styles-bluegreen.css" />
     <Content Include="Content\css\styles-bluered.css" />
     <Content Include="Content\css\styles-greyred.css" />
+    <Content Include="Content\css\tagit\jquery.tagit.css" />
+    <Content Include="Content\css\tagit\tagit.ui-zendesk.css" />
     <Content Include="Content\img\competition.jpg" />
     <Content Include="Content\img\eating.jpg" />
     <Content Include="Content\img\food.jpg" />
@@ -277,6 +280,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tagit\tag-it.js" />
+    <Content Include="Scripts\tagit\tag-it.min.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
@@ -434,8 +439,11 @@
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\tinymce\TinyMCEInitializer.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

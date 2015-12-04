@@ -9,21 +9,28 @@ using FITlosophiData.Models;
 
 namespace FITlosophiMVC.Controllers.APIControllers
 {
-    public class PostsController : ApiController
+    public class PostsAdminController : ApiController
     {
         #region Get
 
-        public List<Post> Get(int amount)
+        public List<Post> GetAllPostSummaries()
         {
             var read = new FITlosophiOperations();
 
-            return read.GetPostsByAmount(amount);
+            return read.GetAllPostSummaries();
         }
 
+        public Post GetPostByID(int PostID)
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetPostByID(PostID);
+        }
+        
         #endregion
 
         #region Post
-        
+
         public void Post(Post post)
         {
             var create = new FITlosophiOperations();
@@ -32,9 +39,5 @@ namespace FITlosophiMVC.Controllers.APIControllers
         }
 
         #endregion
-
-
-
-
     }
 }
