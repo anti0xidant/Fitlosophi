@@ -103,6 +103,10 @@ READ:
 		CategoryName	nvarchar(100)
 
 (4) GetAllPostsByCategory
+	input(s):
+	
+		CategoryID	int
+
 	output(s):
 
 		PostID		int

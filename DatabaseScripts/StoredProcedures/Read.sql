@@ -66,7 +66,7 @@ GO
 
 CREATE PROCEDURE GetAllPostsByCategory 
 (
-	@CateGoryID		int
+	@CategoryID		int
 )
 
 AS BEGIN

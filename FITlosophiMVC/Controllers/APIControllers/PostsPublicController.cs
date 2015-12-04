@@ -27,19 +27,21 @@ namespace FITlosophiMVC.Controllers.APIControllers
             return read.GetPostByID(postID);
         }
 
-        #endregion
-
-        #region Post
-        
-        public void Post(Post post)
+        public List<Post> GetAllPostsByCategory(int categoryID)
         {
-            var create = new FITlosophiOperations();
+            var read = new FITlosophiOperations();
 
-            create.AddPost(post);
+            return read.GetAllPostsByCategory(categoryID);
         }
 
-        #endregion
+        public List<Post> GetPostsByTagID(int tagID)
+        {
+            var read = new FITlosophiOperations();
 
+            return read.GetPostsByTagID(tagID);
+        } 
+
+        #endregion
 
 
 
