@@ -9,15 +9,22 @@ using FITlosophiData.Models;
 
 namespace FITlosophiMVC.Controllers.APIControllers
 {
-    public class PostsController : ApiController
+    public class PostsPublicController : ApiController
     {
         #region Get
 
-        public List<Post> Get(int amount)
+        public List<Post> GetPostByAmount(int amount)
         {
             var read = new FITlosophiOperations();
 
             return read.GetPostsByAmount(amount);
+        }
+
+        public Post GetPostByID(int postID)
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetPostByID(postID);
         }
 
         #endregion
