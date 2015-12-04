@@ -484,6 +484,7 @@
     <Content Include="Views\CMS\AddPage.cshtml" />
     <Content Include="Views\CMS\ManagePosts.cshtml" />
     <Content Include="Views\CMS\ManagePages.cshtml" />
+    <Content Include="Views\Home\BlogDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
