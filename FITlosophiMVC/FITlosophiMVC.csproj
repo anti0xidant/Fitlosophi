@@ -239,10 +239,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
     <Content Include="Content\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
@@ -269,6 +265,10 @@
     <Content Include="Content\less\styles-greyred.less" />
     <Content Include="Content\less\variables.less" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

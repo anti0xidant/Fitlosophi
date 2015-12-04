@@ -14,4 +14,4 @@ Change Menu Order Add Post, Manage Page
 
 Employee should be able to add pages. 
 
-Consider 
+Consider add a way to look up previous list of upload images

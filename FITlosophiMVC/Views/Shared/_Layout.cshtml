@@ -1,4 +1,5 @@
 ﻿@using System
+@using Microsoft.AspNet.Identity
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,7 @@
                                 <a class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    href="#">
-                                    Info
+                                    Pages
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -94,8 +95,14 @@
                                         }
                                         @if (User.IsInRole("Admin"))
                                         {
-                                            <li>@Html.ActionLink("Add Page", "AddPage", "CMS")</li>
                                             <li>@Html.ActionLink("Manage Posts", "ManagePosts", "CMS")</li>
+                                        }
+                                        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+                                        {
+                                            <li>@Html.ActionLink("Add Page", "AddPage", "CMS")</li>
+                                        }
+                                        @if (User.IsInRole("Admin"))
+                                        {
                                             <li>@Html.ActionLink("Manage Pages", "ManagePages", "CMS")</li>
                                             <li>@Html.ActionLink("Register User", "Register", "Account")</li>
                                         }
@@ -113,6 +120,12 @@
 
         <div class="widewrapper subheader">
             <div class="container">
+                <div class="tales-breadcrumb">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <text>Hi @(char.ToUpper(User.Identity.Name.Substring(0,User.Identity.Name.IndexOf("@"))[0]) + User.Identity.Name.Substring(1,User.Identity.Name.IndexOf("@")-1))!</text>
+                    }
+                </div>
                 <div class="tales-searchbox">
                     <form action="#" method="get" accept-charset="utf-8">
                         <button class="searchbutton" type="submit">
@@ -133,21 +146,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 footer-widget">
-                        <h3> <i class="fa fa-cog"></i>Statistics</h3>
-                        <span>Even we sometimes loose track of how many articles we actually have here.</span>
-                        <div class="stats">
-                            <div class="line">
-                                <span class="counter">27</span>
-                                <span class="caption">Articles</span>
-                            </div>
-                            <div class="line">
-                                <span class="counter">2</span>
-                                <span class="caption">Authors</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 footer-widget">
-                        <h3> <i class="fa fa-star"></i> Writer's Mantra</h3>
+                        <h3> <i class="fa fa-star"></i> Writer's Mantra
+                        </h3>
                         <ul class="tales-list">
                             <li>Living healthy is about eating healthy.</li>
                             <li>Being fit is a lifestyle not a short term goal.</li>
@@ -156,12 +156,32 @@
                         </ul>
                     </div>
                     <div class="col-md-4 footer-widget">
-                        <h3> <i class="fa fa-envelope"></i>Contact Us</h3>
+                        <h3> <i class="fa fa-envelope"></i>Contact Us
+                        </h3>
                         <span>We love to hear from my readers. Thoughts, feedback, critique - all welcome! Drop me a line:</span>
 
                         <span class="email">
                             <a href="#">feedback@FITlosophi.com</a>
                         </span>
+                    </div>
+                    <div class="col-md-4 footer-widget">
+                        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+                        {
+                            <h3>
+                                <i class="fa fa-cog"></i>Statistics
+                            </h3>
+                            <span>Even we sometimes loose track of how many articles we actually have here.</span>
+                            <div class="stats">
+                                <div class="line">
+                                    <span class="counter">27</span>
+                                    <span class="caption">Articles</span>
+                                </div>
+                                <div class="line">
+                                    <span class="counter">2</span>
+                                    <span class="caption">Authors</span>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
