@@ -1,0 +1,17 @@
+Summary view on post should indicate more text.
+
+Older newer buttons only if there are more post in each directoin. 
+
+Hasttag search auto complete or listing or list of top hashTag above read next.
+
+Remove Statistics, Move Writer Mantra to the left. 
+
+Change Info button to Pages
+
+Fix styling of the admin and log off
+
+Change Menu Order Add Post, Manage Page
+
+Employee should be able to add pages. 
+
+Consider 
