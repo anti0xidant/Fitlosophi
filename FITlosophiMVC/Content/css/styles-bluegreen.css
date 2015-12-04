@@ -597,7 +597,7 @@ hr {
   margin-bottom: 20px;
   -webkit-border-radius: 200px;
   -moz-border-radius: 200px;
-  border-radius: 200px;
+  border-radius: 30px;
 }
 .blog-teaser header h3 {
   color: #454a4e;
@@ -627,6 +627,11 @@ hr {
   float: right;
   margin-right: 45px;
   margin-bottom: 18px;
+}
+
+.blog-teaser .HashTags {
+    font-size: 12px;
+    color: #d3d3d3;
 }
 /* Blog main page paging */
 .paging {

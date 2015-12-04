@@ -217,6 +217,7 @@
     <Content Include="Content\img\competition.jpg" />
     <Content Include="Content\img\eating.jpg" />
     <Content Include="Content\img\food.jpg" />
+    <Content Include="Content\img\foodSmall.jpg" />
     <Content Include="Content\img\golf.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
@@ -267,6 +268,7 @@
     <Content Include="Content\less\styles-bluered.less" />
     <Content Include="Content\less\styles-greyred.less" />
     <Content Include="Content\less\variables.less" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

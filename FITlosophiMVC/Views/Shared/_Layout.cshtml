@@ -61,6 +61,7 @@
                                     <li>@Html.ActionLink("Disclaimer", "StaticPage", "Home")</li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
                             <li class="dropdown">
                                 <a class="dropdown-toggle"
                                    data-toggle="dropdown"
@@ -76,6 +77,32 @@
                                     <li>@Html.ActionLink("Register User", "Register", "Account")</li>
                                 </ul>
                             </li>
+=======
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="dropdown active">
+                                    <a class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        href="#">
+                                        Admin
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+                                        {
+                                            <li>@Html.ActionLink("Add Post", "AddPost", "CMS")</li>
+                                        }
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li>@Html.ActionLink("Add Page", "AddPage", "CMS")</li>
+                                            <li>@Html.ActionLink("Manage Posts", "ManagePosts", "CMS")</li>
+                                            <li>@Html.ActionLink("Manage Pages", "ManagePages", "CMS")</li>
+                                            <li>@Html.ActionLink("Register User", "Register", "Account")</li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+>>>>>>> fa72f961fcfbb51ca0ae1f16b8115c16e1c47fd2
                                 @Html.Partial("_LoginPartial")
                         </ul>
                     </div>
@@ -91,14 +118,14 @@
                         <button class="searchbutton" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
-                        <input class="searchfield" id="searchbox" type="text" placeholder="Search">
+                        <input class="searchfield" id="searchbox" type="text" placeholder="Hashtag Search">
                     </form>
                 </div>
             </div>
         </div>
         <div class="container body-content">
             @RenderBody()
-            <hr />
+ 
         </div>
     </header>
     <footer>
