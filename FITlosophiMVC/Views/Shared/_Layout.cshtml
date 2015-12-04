@@ -50,7 +50,7 @@
                         <ul class="nav nav-pills navbar-nav">
                             <li>@Html.ActionLink("Blog", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    href="#">
@@ -61,7 +61,7 @@
                                     <li>@Html.ActionLink("Disclaimer", "StaticPage", "Home")</li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    href="#">
@@ -147,7 +147,6 @@
     </footer>
 
 @Scripts.Render("~/bundles/bootstrap")
-
 
 @RenderSection("scripts", required: false)
 </body>
