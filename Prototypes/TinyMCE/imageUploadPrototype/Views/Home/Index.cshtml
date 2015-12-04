@@ -9,12 +9,18 @@
 
 <script>
     $(document).ready(function () {
-
+        $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
         //Setup input form for image upload to Cloudinary
         $('.upload_form').append($.cloudinary.unsigned_upload_tag("bep61vxi", { cloud_name: 'dk0wmifkq' }));
 
 
-        $('.cloudinary-fileupload').bind('cloudinarydone', function (e, data) {
+        $('.cloudinary_fileupload').bind('cloudinarydone', function (e, data) {
+            //set the url data.url
+            var responsInfo = JSON.parse(data);
+            alert(responsInfo.url);
+
+           // alert(data[0].url);
+            $('#url').text = data.url;
             $('.preview').html(
               $.cloudinary.image(data.result.public_id,
                 {
@@ -27,8 +33,8 @@
         });
 
         //Display progress bar
-        $('.cloudinary-fileupload').bind('fileuploadprogress', function (e, data) {
-            $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
+        $('.cloudinary_fileupload').bind('fileuploadprogress', function (e, data) {
+            $('.progress-bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
         });
     });
 
@@ -45,6 +51,16 @@
 </div>
 <div>
     <form class="upload_form"></form>
-    <div class="upload_field"></div>
+    @*<div class="upload_field"></div>*@
+    @*<input type="file" name="file" class="cloudinary-fileupload">*@
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <div class="form_line">
+        <div class="form_controls">
+            <div class="preview"></div>
+        </div>
+    </div>
+    <text id="url"></text>
 </div>
 
