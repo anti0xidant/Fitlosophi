@@ -23,5 +23,11 @@ namespace FITlosophiMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult BlogDetail()
+        {
+            return View();
+        }
+
     }
 }

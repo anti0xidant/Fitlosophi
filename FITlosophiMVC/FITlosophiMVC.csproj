@@ -211,15 +211,11 @@
     <Content Include="Content\css\styles-bluegreen.css" />
     <Content Include="Content\css\styles-bluered.css" />
     <Content Include="Content\css\styles-greyred.css" />
-    <Content Include="Content\img\about-me.png" />
-    <Content Include="Content\img\avatar.png" />
-    <Content Include="Content\img\bike.png" />
-    <Content Include="Content\img\cat.png" />
-    <Content Include="Content\img\hands-big.png" />
-    <Content Include="Content\img\hands.png" />
+    <Content Include="Content\img\competition.jpg" />
+    <Content Include="Content\img\eating.jpg" />
+    <Content Include="Content\img\food.jpg" />
+    <Content Include="Content\img\golf.jpg" />
     <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\smartguy.png" />
-    <Content Include="Content\img\violin.png" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.css" />
@@ -488,6 +484,7 @@
     <Content Include="Views\CMS\AddPage.cshtml" />
     <Content Include="Views\CMS\ManagePosts.cshtml" />
     <Content Include="Views\CMS\ManagePages.cshtml" />
+    <Content Include="Views\Home\BlogDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

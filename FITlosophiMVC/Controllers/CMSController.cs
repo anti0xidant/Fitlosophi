@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FITlosophiData.Models;
 
 namespace FITlosophiMVC.Controllers
 {
@@ -19,8 +20,12 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+
+
         public ActionResult AddPage()
         {
+
+
             return View();
         }
 
