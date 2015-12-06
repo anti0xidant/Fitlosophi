@@ -1,3 +1,7 @@
 ﻿$(document).ready(function() {
-    $('#tagit').tagit();
+    $('#tagit').tagit({
+        placeholderText: "Hashtags",
+        allowSpaces: true,
+       
+});
 });

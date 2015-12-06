@@ -25,7 +25,7 @@ ul.tagit li.tagit-choice-editable {
 } 
 
 ul.tagit li.tagit-new {
-    padding: .25em 4px .25em 0;
+    padding: .25em 4px .25em 10px;
 }
 
 ul.tagit li.tagit-choice a.tagit-label {
