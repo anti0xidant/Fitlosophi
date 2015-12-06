@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\CategoriesController.cs" />
+    <Compile Include="Controllers\APIControllers\HashTagsController.cs" />
     <Compile Include="Controllers\APIControllers\PageAdminController.cs" />
     <Compile Include="Controllers\APIControllers\PostsAdminController.cs" />
     <Compile Include="Controllers\APIControllers\PostsPublicController.cs" />
