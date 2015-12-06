@@ -1,12 +1,17 @@
 ﻿$(document).ready(function() {
     var x = [];
     $.ajax({
-        url: 'api/HashTags/Get',
+        url: '/api/HashTags',
         type: 'GET',
-        success: function(data, status, xhr) {
+        success: function (data, status, xhr) {
+           
             $.each(data, function(index, hashTag) {
-                x.Push(hashTag);
+                x.push(hashTag.TagName);
             });
+         
+        },
+        error: function(jqXHR, error, msg) {
+            alert("FUCK");
         }
     });
 
