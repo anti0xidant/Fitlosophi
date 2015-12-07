@@ -25,7 +25,7 @@ namespace FITlosophiData.Repo
                     p.Add("CategoryID", post.CategoryID);
                     p.Add("UserID", post.UserID);
                     p.Add("Title", post.Title);
-                    p.Add("CoverImageUrl", post.CoverImgURL);
+                    p.Add("CoverImgURL", post.CoverImgURL);
                     p.Add("Body", post.Body);
                     p.Add("HasSchedule", post.HasSchedule);
                     p.Add("StartDate", post.StartDate);

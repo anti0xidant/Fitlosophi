@@ -119,7 +119,7 @@ SELECT
 	@UserID = 'b75da91b-e39a-42ce-b2f0-4834eda139e1', 
 	@Title = '5 Tips for Healthy Eating',
 	@CoverImgURL = 'http://localhost:54909/Content/img/foodSmall.jpg',
-	@Body = '<h2>Static Pages Title</h2><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
+	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
 EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL, @Body, @PostID
 
@@ -293,7 +293,7 @@ SELECT
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 2, 
 	@ActualHashTag =  'HealthyEating' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
@@ -323,31 +323,31 @@ SELECT
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 3, 
 	@ActualHashTag =  'HealthyEating' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 3, 
 	@ActualHashTag =  'food' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 3, 
 	@ActualHashTag =  'Nutrition' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 3, 
 	@ActualHashTag =  'healthysnacks' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
-	@PostID = 1, 
+	@PostID = 3, 
 	@ActualHashTag =  'Greatfood' 
 
 SELECT 

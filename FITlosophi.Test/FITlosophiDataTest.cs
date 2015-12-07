@@ -185,15 +185,68 @@ namespace FITlosophi.Test
 
             newPost.PostID = 15;
             newPost.CategoryID = 3;
-            newPost.UserID = "3ismyid";
+            newPost.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
             newPost.Title = "Test post 44";
-            newPost
+            newPost.CoverImgURL = "http://localhost:54909/Content/img/eating.jpg";
+            newPost.Body = "Hi";
+            newPost.DateCreated = DateTime.Parse("12/07/2015");
+            newPost.HasSchedule = false;
+            newPost.IsPublished = false;
+            newPost.IsActive = false;
+
+           Updaterepo.EditPost(newPost);
+
+            var newbody = Readrepo.GetPostByID(15);
+
+            Assert.AreEqual("Hi", newbody.Body);
         }
 
 
+        [Test]
+        public void EditPage()
+        {
+            StaticPage newpage = new StaticPage();
+
+            newpage.StaticPageID = 22;
+            newpage.ButtonName = "Koshin Hits";
+            newpage.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpage.Body = "day to day";
+
+            Updaterepo.EditPage(newpage);
+
+            var newbody = Readrepo.GetPageByID(22);
+
+            Assert.AreEqual("day to day", newbody.Body);
+        }
 
 
+        [Test]
+        public void PublishPage()
+        {
+            Updaterepo.PublishPage(9);
 
+            var newpage = Readrepo.GetAllPageSummaries();
+
+            Assert.AreEqual(true, newpage.Where(m => m.StaticPageID == 9).FirstOrDefault(x=> x.IsPublished == true).IsPublished);
+        }
+
+
+        [Test]
+        public void PublishPost()
+        {
+            Post post = new Post();
+
+            post.PostID = 4;
+            post.HasSchedule = false;
+            post.StartDate = null;
+            post.EndDate = null;
+
+            Updaterepo.PublishPost(post);
+
+            var newpost = Readrepo.GetAllPostSummaries();
+
+            Assert.AreEqual(false, newpost.Where(m=> m.PostID == 4).FirstOrDefault(x => x.HasSchedule == false ).HasSchedule);
+        }
 
 #endregion
     }
