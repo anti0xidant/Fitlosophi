@@ -1,4 +1,5 @@
-﻿@model FITlosophiData.Models.StaticPage
+﻿@using Microsoft.AspNet.Identity
+@model FITlosophiData.Models.StaticPage
 
 @{
     ViewBag.Title = "AddPage";
@@ -7,23 +8,39 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 tales-superblock" id="contact">
         
-        <h2>New Page</h2>
-        
-        <form action="#" method="get" accept-charset="utf-8" class="contact-form">
-            <input type="text" name="Title" id="contact-name" placeholder="Title" class="form-control input-lg">
-            <input type="email" name="ButtonName" id="contact-email" placeholder="Button Name" class="form-control input-lg">
+        <br />
+
+        <form action="/CMS/Postpage" method="POST" accept-charset="utf-8" class="contact-form">
+            <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg">
+
             <br/>
+
             <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg"></textarea>
+
+            <input type="hidden" name="UserID" value=@User.Identity.GetUserId()/>
+
             <div class="buttons clearfix">
                 <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
+                @*<button id="modalLaunch"class="btn btn-xlarge btn-tales-one">Image</button>*@
+                <input id="modalLaunch" class="btn btn-xlarge btn-tales-one" type="button" value="Image"/>
             </div>
         </form>
     </div>
-</div>  
+</div>
+
+@Html.Partial("_ImageURLGenerator");
+
+
 
 @section Scripts{
-    <!-- TinyMCE Script Reference -->
-    @*<script src="~/scripts/tinymce/tinymce.min.js"></script>*@
-    <!-- Script to wire up your TinyMCE editor -->
-    <script type="text/javascript" src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
+    <!--Image Upload Modal-->
+    <script src="~/Scripts/app/imageUploader.js"></script>
+    <script src='~/Scripts/cloudinary/jquery.ui.widget.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.iframe-transport.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.fileupload.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.cloudinary.js' type='text/javascript'></script>
+
+    <!-- TinyMCE Initializer -->
+    <script src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
+<script src="~/Scripts/app/AddPage.js"></script>
 }
