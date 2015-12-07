@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
-
-    $('#addImageModal').modal('show');
+   
     $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
     
     //Setup input form for image upload to Cloudinary

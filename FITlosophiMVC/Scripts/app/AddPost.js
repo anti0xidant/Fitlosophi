@@ -8,7 +8,7 @@
             });
         }
 
-    })
+    });
 
     $('#PostCategoryID').change(function () {
 
@@ -19,16 +19,21 @@
         }
     });
 
-    // When wants to upload image as CoverIMG
+    // When user wants to upload image as CoverIMG
     $('#CoverImgURL').click(function () {
-        // Display modal
+        // clear all fields
+        $('.progress-bar').removeAttr('style');
+        $('.preview').empty();
+        $('#btnConfirm').unbind();
 
-        $('#AddImageURL').click(function() {
-            $('#CoverImgURL').val($('#ImgURLHiddenInput').val());
+        $('#addImageModal').modal('show');
+
+        $('#btnConfirm').click(function() {
+            $('#CoverImgURL').val($('#imageURL').val());
+            $('#addImageModal').modal('hide');
             // clear $('#ImgURLHiddenInput') value
             // clear preview image
             // close modal
         });
     });
-
 });

@@ -16,6 +16,28 @@ namespace FITlosophiBLL
 
         public void AddPost(Post post)
         {
+            // Parse Tags into separate hash tags
+            var hashtags = post.Tags.Split(',');
+
+            // Initialize list of HashTags in post
+            post.HashTags = new List<HashTag>();
+            
+            foreach (var hashtag in hashtags)
+            {
+                var p = new HashTag();
+
+                if (hashtag[0] == '#')
+                {
+                    p.TagName = hashtag.Substring(1);
+                }
+                else
+                {
+                    p.TagName = hashtag;
+                }
+
+                post.HashTags.Add(p);
+            }
+
             var create = new Create();
             var postID = create.AddPost(post);
 

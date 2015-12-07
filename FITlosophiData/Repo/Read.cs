@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
@@ -149,7 +150,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@CategoryID", categoryID);
+                    p.Add("@CateGoryID", categoryID);
                     posts =
                         cn.Query<Post>("GetAllPostsByCategory", p, commandType: CommandType.StoredProcedure).ToList();
 
@@ -253,6 +254,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@TagID", tagID);
                     posts =
+                        cn.Query<Post>("GetPostsByTagID", p,  commandType: CommandType.StoredProcedure).ToList();
                         cn.Query<Post>("GetPostsByTagID", p, commandType: CommandType.StoredProcedure).ToList();
 
 
@@ -339,8 +341,14 @@ namespace FITlosophiData.Repo
 
                 return posts;
             }
+
+
+
         }
 
 
+ 
+     
     }
+
 }

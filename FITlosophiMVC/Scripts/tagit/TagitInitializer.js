@@ -15,7 +15,8 @@
     $('#tagit').tagit({
         placeholderText: "Hashtags",
         allowSpaces: true,
-        availableTags: x
+        availableTags: x,
+        singleField: true,
+        fieldName: "Tags"
     });
-
 });
