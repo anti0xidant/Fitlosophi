@@ -8,10 +8,7 @@
             $.each(data, function(index, hashTag) {
                 x.push(hashTag.TagName);
             });
-         
-        },
-        error: function(jqXHR, error, msg) {
-            alert("FUCK");
+
         }
     });
 
@@ -20,6 +17,5 @@
         allowSpaces: true,
         availableTags: x
     });
-
 
 });

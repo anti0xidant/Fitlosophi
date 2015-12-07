@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using FITlosophiBLL;
 using FITlosophiData.Models;
 using FITlosophiData.Repo;
 
@@ -13,7 +14,7 @@ namespace FITlosophiMVC.Controllers.APIControllers
     {
         public List<HashTag> Get()
         {
-            var read = new Read();
+            var read = new FITlosophiOperations();
 
             return read.GetAllTags();
         }
