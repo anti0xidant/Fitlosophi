@@ -16,14 +16,14 @@ namespace FITlosophiMVC.Controllers
         }
 
 
-        [Authorize]
+        //[Authorize]
         public ActionResult AddPost()
         {
             return View();
         }
 
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult AddPage()
         {
 

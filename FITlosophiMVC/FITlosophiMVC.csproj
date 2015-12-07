@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\CategoriesController.cs" />
+    <Compile Include="Controllers\APIControllers\HashTagsController.cs" />
     <Compile Include="Controllers\APIControllers\PageAdminController.cs" />
     <Compile Include="Controllers\APIControllers\PostsAdminController.cs" />
     <Compile Include="Controllers\APIControllers\PostsPublicController.cs" />
@@ -278,6 +279,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-dateFormat.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -287,6 +292,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tagit\tag-it.js" />
     <Content Include="Scripts\tagit\tag-it.min.js" />
+    <Content Include="Scripts\tagit\TagitInitializer.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />

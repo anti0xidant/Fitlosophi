@@ -12,12 +12,10 @@
 
         <form action="#" method="get" accept-charset="utf-8" class="contact-form">
             <input type="text" name="Title" id="contact-name" placeholder="Title" class="form-control input-lg">
-            <input type="email" name="ActualHashTags" id="contact-email" placeholder="Tags" class="form-control input-lg">
-            @*<ul id="tagit">
-                <li>premade1</li>
-                <li>premade2</li>
-            </ul>*@
-            <br/>
+            <input type="email" name="Email" id="contact-email" placeholder="Email" class="form-control input-lg">
+            <ul id="tagit">
+
+            </ul >
             <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg"></textarea>
             <div class="buttons clearfix">
                 <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
@@ -27,9 +25,10 @@
 </div>        
 
 @section Scripts{
-    <!-- TinyMCE Script Reference -->
-@*<script src="~/scripts/tinymce/tinymce.min.js"></script>*@
-<!-- Script to wire up your TinyMCE editor -->
-    <script src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
-    
+<!-- TinyMCE Initializer -->
+<script src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
+
+<!--Tagit JS Library and Initializer-->
+<script src="~/Scripts/tagit/tag-it.js" type="text/javascript" charset="utf-8"></script>
+<script src="~/Scripts/tagit/TagitInitializer.js"></script>
 }
