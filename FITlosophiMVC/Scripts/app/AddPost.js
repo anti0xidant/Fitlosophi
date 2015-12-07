@@ -8,7 +8,7 @@
             });
         }
 
-    })
+    });
 
     $('#PostCategoryID').change(function () {
 
@@ -24,6 +24,7 @@
         // clear all fields
         $('.progress-bar').removeAttr('style');
         $('.preview').empty();
+        $('#btnConfirm').unbind();
 
         $('#addImageModal').modal('show');
 
@@ -35,5 +36,4 @@
             // close modal
         });
     });
-
 });
