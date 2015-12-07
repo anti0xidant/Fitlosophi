@@ -22,6 +22,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="~/Content/css/styles-bluegreen.css" id="theme-styles">
     <link rel="stylesheet" href="~/Content/less/layout.less"/>
+    <link href="~/Content/css/blogSummary.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
         <script src="~/Content/node_modules/respond.js/dest/respond.min.js"></script>
@@ -35,8 +36,6 @@
 
     <!--TinyMCE JS files-->
     <script src="~/Scripts/tinymce/tinymce.min.js"></script>
-
-    @*<script>window.jQuery || document.write('<script src="~/Content/node_modules/jquery/dist/jquery.min.js"><\/script>')</script>*@
 
 </head>
 
@@ -102,6 +101,7 @@
                             }
 
                                 @Html.Partial("_LoginPartial")
+
                         </ul>
                     </div>
                 </nav>
@@ -185,7 +185,6 @@
     </footer>
 
 
-@Scripts.Render("~/bundles/bootstrap")
 
 <!--JQuery JS files-->
 <script src="~/Scripts/jquery-2.1.4.min.js"></script>
