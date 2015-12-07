@@ -28,41 +28,41 @@ namespace FITlosophiMVC.Controllers
         //    return View();
         //}
 
-        public ActionResult Index(string route)
+        public ActionResult Index()
         {
-            var read = new Read();
+            var ops = new FITlosophiOperations();
 
             var blogVM = new BlogViewModel();
 
-            blogVM.Posts = read.GetPostsByAmount(10);
-            blogVM.HashTags = read.GetAllTags();
-            blogVM.Categories = read.GetAllCategories(); 
+            blogVM.Posts = ops.GetPostsByAmount(10);
+            blogVM.HashTags = ops.GetAllTags();
+            blogVM.Categories = ops.GetAllCategories(); 
        
-            return View(blogVM);
+            return View("Index", blogVM);
         }
 
-        public ActionResult BlogByCategory(int CategoryID)
+        public ActionResult BlogByCategoryID(int CategoryID)
         {
-            var read = new Read();
+            var ops = new FITlosophiOperations();
 
             var blogVM = new BlogViewModel();
 
-            blogVM.Posts = read.GetAllPostsByCategory(CategoryID);
-            blogVM.HashTags = read.GetAllTags();
-            blogVM.Categories = read.GetAllCategories();
+            blogVM.Posts = ops.GetAllPostsByCategory(CategoryID);
+            blogVM.HashTags = ops.GetAllTags();
+            blogVM.Categories = ops.GetAllCategories();
 
             return View("Index", blogVM);
         }
 
         public ActionResult BlogByTagID(int TagID)
         {
-            var read = new Read();
+            var ops = new FITlosophiOperations();
 
             var blogVM = new BlogViewModel();
 
-            blogVM.Posts = read.GetPostsByTagID(TagID);
-            blogVM.HashTags = read.GetAllTags();
-            blogVM.Categories = read.GetAllCategories();
+            blogVM.Posts = ops.GetPostsByTagID(TagID);
+            blogVM.HashTags = ops.GetAllTags();
+            blogVM.Categories = ops.GetAllCategories();
 
             return View("Index", blogVM);
         }

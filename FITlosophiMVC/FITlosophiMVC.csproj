@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\blogSummary.css" />
     <Content Include="Content\css\styles-bluegreen.css" />
     <Content Include="Content\css\styles-bluered.css" />
     <Content Include="Content\css\styles-greyred.css" />
@@ -241,6 +242,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app\AddPost.js" />
+    <Content Include="Scripts\app\blogIndex.js" />
     <Content Include="Scripts\app\imageUploader.js" />
     <Content Include="Scripts\app\loadStaticPages.js" />
     <Content Include="Scripts\app\managePages.js" />
