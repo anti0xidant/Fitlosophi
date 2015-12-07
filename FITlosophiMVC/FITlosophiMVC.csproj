@@ -239,12 +239,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-<<<<<<< HEAD
     <Content Include="Scripts\app\AddPost.js" />
-=======
     <Content Include="Scripts\app\loadStaticPages.js" />
-    <Content Include="Scripts\app\managePosts.js" />
->>>>>>> 43b283c2630891d035e27073031b2bf713335297
     <Content Include="Scripts\app\managePages.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
