@@ -26,7 +26,44 @@ namespace FITlosophiMVC.Controllers.APIControllers
 
             return read.GetPostByID(PostID);
         }
-        
+
+        #endregion
+
+        #region Update
+
+        [HttpPut]
+        [ActionName("EditPost")]
+        public void EditPost(Post Post)
+        {
+            var update = new FITlosophiOperations();
+
+            update.EditPost(Post);
+        }
+
+        [HttpPut]
+        [ActionName("PublishPost")]
+        public void PublishPost(int PostID)
+        {
+            var post = new Post();
+            post.PostID = PostID;
+
+            var update = new FITlosophiOperations();
+
+            update.PublishPost(post);
+        }
+
+        #endregion
+
+        #region Delete
+
+        [HttpPut]
+        [ActionName("DeletePost")]
+        public void DeletePost(int PostID)
+        {
+            var delete = new FITlosophiOperations();
+            delete.DeletePost(PostID);
+        }
+
         #endregion
 
         #region Post

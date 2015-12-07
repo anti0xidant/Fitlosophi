@@ -13,6 +13,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
     {
         #region Get
 
+        [HttpGet]
+        [ActionName("GetAllPageSummaries")]
         public List<StaticPage> GetAllPageSummaries()
         {
             var read = new FITlosophiOperations();
@@ -20,6 +22,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
             return read.GetAllPageSummaries();
         }
 
+        [HttpGet]
+        [ActionName("GetPageByID")]
         public StaticPage GetPageByID(int PageID)
         {
             var read = new FITlosophiOperations();
@@ -31,6 +35,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
 
         #region Update
 
+        [HttpPut]
+        [ActionName("EditPage")]
         public void EditPage(StaticPage StaticPage)
         {
             var update = new FITlosophiOperations();
@@ -38,6 +44,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
            update.EditPage(StaticPage);
         }
 
+        [HttpPut]
+        [ActionName("PublishPage")]
         public void PublishPage(int StaticPageID)
         {
             var update = new FITlosophiOperations();
@@ -49,6 +57,8 @@ namespace FITlosophiMVC.Controllers.APIControllers
 
         #region Delete
 
+        [HttpPut]
+        [ActionName("DeletePage")]
         public void DeletePage(int StaticPageID)
         {
             var delete = new FITlosophiOperations();

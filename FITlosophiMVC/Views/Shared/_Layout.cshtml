@@ -58,7 +58,7 @@
                                     Pages
                                     <b class="caret"></b>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" id="StaticPageMenu">
                                     <li>@Html.ActionLink("Disclaimer", "StaticPage", "Home")</li>
                                 </ul>
                             </li>
@@ -178,6 +178,7 @@
     </footer>
 
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/app/loadStaticPages.js")
 
 @RenderSection("scripts", required: false)
 </body>
