@@ -208,7 +208,8 @@ READ:
 		WriterName	string
 		CategoryID	int
 		CategoryName	nvarchar(100)
-		
+
+(11) 
 ==========================================================
 UPDATE:
 

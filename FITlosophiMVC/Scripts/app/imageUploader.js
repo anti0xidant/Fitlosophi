@@ -17,7 +17,7 @@
           $.cloudinary.image(data.result.public_id,
             {
                 format: data.result.format, version: data.result.version,
-                crop: 'fill', width: 150, height: 100
+                crop: 'fill', width: 250, height: 250
             })
         );
         $('.image_public_id').val(data.result.public_id);

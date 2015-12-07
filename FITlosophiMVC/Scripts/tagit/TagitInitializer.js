@@ -1,7 +1,7 @@
 ﻿$(document).ready(function() {
     var x = [];
     $.ajax({
-        url: '/api/HashTags',
+        url: '/api/HashTags/Get',
         type: 'GET',
         success: function (data, status, xhr) {
            
