@@ -283,6 +283,8 @@
     <Content Include="Scripts\cloudinary\jquery.fileupload.js" />
     <Content Include="Scripts\cloudinary\jquery.iframe-transport.js" />
     <Content Include="Scripts\cloudinary\jquery.ui.widget.js" />
+    <Content Include="Scripts\Dot\jquery.dotdotdot.js" />
+    <Content Include="Scripts\Dot\jquery.dotdotdot.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -19,6 +19,7 @@ namespace FITlosophi.Test
         public FITlosophiData.Repo.Read Readrepo { get; set; }
         public FITlosophiData.Repo.Delete Deleterepo { get; set; }
         public FITlosophiData.Repo.Update Updaterepo { get; set; }
+        public FITlosophiOperations ops { get; set; }
 
 
         [SetUp]
@@ -137,19 +138,63 @@ namespace FITlosophi.Test
         #region Delete
 
 
+        //[Test]
+        //public void DeleteAllTagsByPostID()
+        //{
+        //    Deleterepo.DeleteAllTagsByPostID(4);
+
+        //    var post = ops.GetPostByID(4);
+
+        //    Assert.AreEqual(0, post.HashTags.Count());
+        //}
+
+
+
         [Test]
-        public void DeleteAllTagsByPostID()
+        public void DeletePage()
         {
-            Deleterepo.DeleteAllTagsByPostID(4);
+            Deleterepo.DeletePage(22);
 
-            var tags = Readrepo.GetTagsByPostID(4);
+            var page = Readrepo.GetPageByID(22);
 
-            Assert.AreEqual(null, tags.FirstOrDefault(m => m.ActualHashTag == null).ActualHashTag);
+            Assert.AreEqual(false, page.IsActive);
         }
 
 
+        [Test]
+        public void DeletePost()
+        {
+            Deleterepo.DeletePost(12);
+
+            var post = Readrepo.GetPostByID(12);
+
+            Assert.AreEqual(false, post.IsActive);
+        }
+
+        #endregion
+
+
+
+
+        #region Update
+
+        [Test]
+        public void EditPost()
+        {
+            Post newPost = new Post();
+
+            newPost.PostID = 15;
+            newPost.CategoryID = 3;
+            newPost.UserID = "3ismyid";
+            newPost.Title = "Test post 44";
+            newPost
+        }
+
+
+
+
+
+
 #endregion
-
-
     }
 }
