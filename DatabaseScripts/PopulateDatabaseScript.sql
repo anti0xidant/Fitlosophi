@@ -153,7 +153,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 1',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -162,7 +162,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 2',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -171,7 +171,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 3',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -180,7 +180,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 4',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -189,7 +189,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 5',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -198,7 +198,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 6',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -207,7 +207,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 7',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -216,7 +216,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 8',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -225,7 +225,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 9',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -234,7 +234,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 10',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -243,7 +243,7 @@ EXECUTE AddPost @CategoryID, @UserID, @Title, @CoverImgURL,@Body, @PostID
 SELECT 
 	@CategoryID = 3, 
 	@UserID = '6dc67935-e819-445e-94cc-cb85d97bd56c', 
-	@Title = 'Test Post Title',
+	@Title = 'Test Post Title 11',
 	@CoverImgURL = 'http://localhost:54909/Content/img/eating.jpg',
 	@Body = '<p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p><p>Lorem ipsum dolor sit amet, vocent posidonium pri ei, vel regione democritum cu. An sint aliquip insolens per, ex sint etiam pro. Eam at omnis inciderint consequuntur, mel euismod patrioque ei, eam admodum consetetur ei. Eu maiestatis percipitur qui. Est partem vivendo elaboraret an. Vim ad dicit iuvaret delicata, fugit audire forensibus no nec, ad congue essent nusquam qui. Cum in eirmod concludaturque. Ea deleniti appellantur dissentiunt mei. Choro dicam petentium eos ei. Has id utinam invidunt tacimates, mazim nostro rationibus eos at. His voluptua splendide omittantur an, ut usu nisl sint cibo. Has te animal recusabo moderatius, homero blandit erroribus nec te.</p>';
 
@@ -264,113 +264,113 @@ DECLARE
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#HealthyEating' 
+	@ActualHashTag =  'HealthyEating' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#Food' 
+	@ActualHashTag =  'Food' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#Nutrition' 
+	@ActualHashTag =  'Nutrition' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#HealthySnacks' 
+	@ActualHashTag =  'HealthySnacks' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#GreatFood' 
+	@ActualHashTag =  'GreatFood' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#HealthyEating' 
+	@ActualHashTag =  'HealthyEating' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 2, 
-	@ActualHashTag =  '#GolfSwing' 
+	@ActualHashTag =  'GolfSwing' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 2, 
-	@ActualHashTag =  '#FoodForGolf' 
+	@ActualHashTag =  'FoodForGolf' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 2, 
-	@ActualHashTag =  '#ImproveYourGam' 
+	@ActualHashTag =  'ImproveYourGam' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 2, 
-	@ActualHashTag =  '#Golfwods' 
+	@ActualHashTag =  'Golfwods' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#HealthyEating' 
+	@ActualHashTag =  'HealthyEating' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#food' 
+	@ActualHashTag =  'food' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#Nutrition' 
+	@ActualHashTag =  'Nutrition' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#healthysnacks' 
+	@ActualHashTag =  'healthysnacks' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 1, 
-	@ActualHashTag =  '#Greatfood' 
+	@ActualHashTag =  'Greatfood' 
 
 SELECT 
 	@PostID = 4, 
-	@ActualHashTag =  '#golfswing' 
-
-EXECUTE AddTag @PostID, @ActualHashTag
-
-SELECT 
-	@PostID = 4, 
-	@ActualHashTag =  '#Golf' 
+	@ActualHashTag =  'golfswing' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 4, 
-	@ActualHashTag =  '#ImproveYourGam' 
+	@ActualHashTag =  'Golf' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 
 SELECT 
 	@PostID = 4, 
-	@ActualHashTag =  '#GolfWODs' 
+	@ActualHashTag =  'ImproveYourGam' 
+
+EXECUTE AddTag @PostID, @ActualHashTag
+
+SELECT 
+	@PostID = 4, 
+	@ActualHashTag =  'GolfWODs' 
 
 EXECUTE AddTag @PostID, @ActualHashTag
 GO

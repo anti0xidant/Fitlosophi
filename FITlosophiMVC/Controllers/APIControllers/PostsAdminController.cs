@@ -46,7 +46,7 @@ namespace FITlosophiMVC.Controllers.APIControllers
         {
             var post = new Post();
             post.PostID = PostID;
-
+            
             var update = new FITlosophiOperations();
 
             update.PublishPost(post);

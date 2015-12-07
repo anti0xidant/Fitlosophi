@@ -17,7 +17,7 @@
         $('.cloudinary_fileupload').bind('cloudinarydone', function (e, data) {
             //set the url data.url
             //var responsInfo = JSON.parse(data);
-            //alert(responsInfo.url);
+            console.log(data.result.url);
 
            // alert(data[0].url);
             $('#url').text = data.url;
