@@ -17,7 +17,7 @@ namespace FITlosophiMVC.Controllers
         }
 
 
-        //[Authorize]
+        [Authorize]
         public ActionResult AddPost()
         {
             return View();
@@ -33,12 +33,22 @@ namespace FITlosophiMVC.Controllers
             return View("ManagePosts");
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddPage()
         {
 
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult postpage(StaticPage page)
+        {
+            var create = new FITlosophiOperations();
+
+            create.AddStaticPage(page);
+
+            return View("ManagePages");
         }
 
         [Authorize(Roles = "Admin")]

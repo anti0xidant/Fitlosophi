@@ -241,6 +241,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\app\AddPage.js" />
     <Content Include="Scripts\app\AddPost.js" />
     <Content Include="Scripts\app\blogIndex.js" />
     <Content Include="Scripts\app\imageUploader.js" />
@@ -522,6 +523,7 @@
     <Content Include="Views\Shared\_ManagePageModal.cshtml" />
     <Content Include="Views\Shared\_ManagePostsModal.cshtml" />
     <Content Include="Views\Shared\_AddImageModal.cshtml" />
+    <Content Include="Views\Shared\_ImageURLGenerator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
