@@ -149,7 +149,7 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@CategoryID", categoryID);
+                    p.Add("@CateGoryID", categoryID);
                     posts =
                         cn.Query<Post>("GetAllPostsByCategory", p, commandType: CommandType.StoredProcedure).ToList();
 
@@ -253,6 +253,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@TagID", tagID);
                     posts =
+                        cn.Query<Post>("GetPostsByTagID", p,  commandType: CommandType.StoredProcedure).ToList();
                         cn.Query<Post>("GetPostsByTagID", p, commandType: CommandType.StoredProcedure).ToList();
 
 
@@ -339,7 +340,12 @@ namespace FITlosophiData.Repo
 
                 return posts;
             }
+
+
+
         }
+
+
 
 
     }
