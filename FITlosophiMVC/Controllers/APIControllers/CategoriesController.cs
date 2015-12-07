@@ -11,8 +11,13 @@ namespace FITlosophiMVC.Controllers.APIControllers
 {
     public class CategoriesController : ApiController
     {
-        [HttpPost]
-        //[ActionName("AddNewCategory")]
+        public List<Category> Get()
+        {
+            var read = new FITlosophiOperations();
+
+            return read.GetAllCategories();
+        } 
+
         public void Post(Category category)
         {
             var post = new FITlosophiOperations();

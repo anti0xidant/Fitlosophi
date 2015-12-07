@@ -1168,3 +1168,15 @@ fieldset[disabled] .btn-tales-two.active {
   line-height: normal;
   border-radius: 5px;
 }
+
+.categoryPlaceholder {
+    margin-top: 15px;
+    height: 48px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #a5b1bc;
+}
+
+
+
+

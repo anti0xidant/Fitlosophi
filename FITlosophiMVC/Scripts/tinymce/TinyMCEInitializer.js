@@ -5,8 +5,9 @@ $(document).ready(function() {
         selector: "#tinymce",
         menubar: false,
         skin: "andrew",
-        toolbar1: "undo redo | bold italic underline strikethrough | subscript superscript | alignleft aligncenter alignright | numlist bullist",
-        toolbar2: "removeformat | formatselect | fontselect | fontsizeselect",
+        plugins: ["link, image, fullscreen preview"],
+        toolbar1: "undo redo | bold italic underline strikethrough | subscript superscript | alignleft aligncenter alignright | numlist bullist | fullscreen",
+        toolbar2: "removeformat | formatselect | fontselect | fontsizeselect | link image | preview",
         content_css: "css/example.css"
     });
 

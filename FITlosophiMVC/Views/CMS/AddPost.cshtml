@@ -11,10 +11,11 @@
         <h2>New Post</h2>
 
         <form action="#" method="get" accept-charset="utf-8" class="contact-form">
-            <input type="text" name="Title" id="contact-name" placeholder="Title" class="form-control input-lg">
-            <input type="email" name="Email" id="contact-email" placeholder="Email" class="form-control input-lg">
+            <input type="text" name="Title" id="PostTitle" placeholder="Title" class="form-control input-lg">
+            <select class="form-control categoryPlaceholder" name="CategoryID" id="PostCategoryID">
+                <option value="0" disabled selected hidden>Category</option>
+            </select> 
             <ul id="tagit">
-
             </ul >
             <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg"></textarea>
             <div class="buttons clearfix">
@@ -31,4 +32,5 @@
 <!--Tagit JS Library and Initializer-->
 <script src="~/Scripts/tagit/tag-it.js" type="text/javascript" charset="utf-8"></script>
 <script src="~/Scripts/tagit/TagitInitializer.js"></script>
+<script src="~/Scripts/app/AddPost.js"></script>
 }
