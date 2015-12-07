@@ -1,6 +1,6 @@
 ﻿$(document).ready(function() {
     $.ajax({
-        url: '/api/Categories',
+        url: '/api/Categories/Get',
         type: 'GET',
         success: function(data, status, xhr) {
             $.each(data, function(index, category) {
@@ -18,4 +18,22 @@
             $('#PostCategoryID').css('color', '#555');
         }
     });
+
+    // When user wants to upload image as CoverIMG
+    $('#CoverImgURL').click(function () {
+        // clear all fields
+        $('.progress-bar').removeAttr('style');
+        $('.preview').empty();
+
+        $('#addImageModal').modal('show');
+
+        $('#btnConfirm').click(function() {
+            $('#CoverImgURL').val($('#imageURL').val());
+            $('#addImageModal').modal('hide');
+            // clear $('#ImgURLHiddenInput') value
+            // clear preview image
+            // close modal
+        });
+    });
+
 });

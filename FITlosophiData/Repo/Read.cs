@@ -254,6 +254,7 @@ namespace FITlosophiData.Repo
                     p.Add("@TagID", tagID);
                     posts =
                         cn.Query<Post>("GetPostsByTagID", p,  commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetPostsByTagID", p, commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -345,7 +346,6 @@ namespace FITlosophiData.Repo
         }
 
 
-        public post
 
 
     }
