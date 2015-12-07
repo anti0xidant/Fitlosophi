@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FITlosophiBLL;
 using FITlosophiData.Models;
 
 namespace FITlosophiMVC.Controllers
@@ -22,6 +23,15 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Postpost(Post post)
+        {
+            var create = new FITlosophiOperations();
+
+            create.AddPost(post);
+
+            return View("ManagePosts");
+        }
 
         //[Authorize(Roles = "Admin")]
         public ActionResult AddPage()
