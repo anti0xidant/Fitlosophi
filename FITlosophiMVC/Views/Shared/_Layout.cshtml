@@ -66,13 +66,13 @@
                                     Pages
                                     <b class="caret"></b>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" id="StaticPageMenu">
                                     <li>@Html.ActionLink("Disclaimer", "StaticPage", "Home")</li>
                                 </ul>
                             </li>
                             <li>
-                            <li>@Html.ActionLink("Register User", "Register", "Account")</li>
-                            <li>@Html.ActionLink("Add Post", "AddPost", "CMS")</li>
+                            @*<li>@Html.ActionLink("Register User", "Register", "Account")</li>
+                            <li>@Html.ActionLink("Add Post", "AddPost", "CMS")</li>*@
                             @if (Request.IsAuthenticated)
                             {
                                 <li class="dropdown active">
@@ -187,6 +187,9 @@
         </div>
     </footer>
 
+
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/app/loadStaticPages.js")
 <!--JQuery JS files-->
 <script src="~/Scripts/jquery-2.1.4.min.js"></script>
 
