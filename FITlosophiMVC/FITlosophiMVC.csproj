@@ -240,6 +240,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app\AddPost.js" />
+    <Content Include="Scripts\app\imageUploader.js" />
     <Content Include="Scripts\app\loadStaticPages.js" />
     <Content Include="Scripts\app\managePages.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -275,8 +276,13 @@
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.css.map" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\dotdotdot\jquery.dotdotdot.js" />
-    <Content Include="Scripts\dotdotdot\jquery.dotdotdot.min.js" />
+    <Content Include="Scripts\cloudinary\jquery.cloudinary.js" />
+    <Content Include="Scripts\cloudinary\jquery.fileupload-image.js" />
+    <Content Include="Scripts\cloudinary\jquery.fileupload-process.js" />
+    <Content Include="Scripts\cloudinary\jquery.fileupload-validate.js" />
+    <Content Include="Scripts\cloudinary\jquery.fileupload.js" />
+    <Content Include="Scripts\cloudinary\jquery.iframe-transport.js" />
+    <Content Include="Scripts\cloudinary\jquery.ui.widget.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -510,6 +516,7 @@
     <Content Include="Views\Home\BlogDetail.cshtml" />
     <Content Include="Views\Shared\_ManagePageModal.cshtml" />
     <Content Include="Views\Shared\_ManagePostsModal.cshtml" />
+    <Content Include="Views\Shared\_AddImageModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

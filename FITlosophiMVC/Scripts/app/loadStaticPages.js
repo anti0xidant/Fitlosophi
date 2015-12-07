@@ -12,19 +12,23 @@ function loadStaticPages() {
         success: function (data, status, xhr) {
             $('#staticPages').empty();
 
+            if (data.length == 0) {
+                $('#PagesDropdown').remove();
+            }
             $.each(data, function (index, staticPage) {
-                $(createStaticPagesMenu(staticPage, index)).appendTo($('#staticPages'));
+                $(createStaticPagesMenu(staticPage, index)).appendTo($('#StaticPageMenu'));
             });
+        },
+        error: function (xhr, status, err) {
+            $('#PagesDropdown').remove();
+            alert('error:' + err);
         }
     });
 };
 
 // Creates HTML table row of player data which is used to populate Roster Table in loadRoster()
 function createStaticPagesMenu(staticPage, index) {
-    if (staticPage.IsActive) {
-        var datePublished = '';
-
-        return '<tr><td>' + (index + 1) + '</td><td>' + staticPage.DateCreated + '</td><td>' + staticPage.ButtonName + '</td><td>' + datePublished + '</td></td><td><button class=\"btn btn-primary btn-xs btnEditPage\" value=\"' + staticPage.StaticPageID + '\">Edit</button></td>' +
-            '<td><button class=\"btn btn-danger btn-xs btnDeletePage\" value=\"' + staticPage.StaticPageID + '\">Delete</button></td><td><button class=\"btn btn-success btn-xs btnPublishPage\" value=\"' + staticPage.StaticPageID + '\">Publish</button></td></tr>';
+    if (staticPage.IsActive && staticPage.IsPublished) {
+        return '<li><a href="/Home/StaticPage?StaticPageID=' + staticPage.StaticPageID + '">' + staticPage.ButtonName + '</a></li>';
     }
 }
