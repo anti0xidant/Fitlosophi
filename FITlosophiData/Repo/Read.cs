@@ -149,9 +149,9 @@ namespace FITlosophiData.Repo
                 try
                 {
                     var p = new DynamicParameters();
-                    p.Add("@CategoryID", categoryID);
+                    p.Add("@CateGoryID", categoryID);
                     posts =
-                        cn.Query<Post>("GetAllPostsByCategory", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetAllPostsByCategory", p, commandType: CommandType.StoredProcedure).ToList();
 
                 }
                 //catch (Exception e)
@@ -184,7 +184,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@PostID", postID);
                     post =
-                        cn.Query<Post>("GetPostByID", commandType: CommandType.StoredProcedure).FirstOrDefault();
+                        cn.Query<Post>("GetPostByID", p, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
 
                 }
@@ -218,7 +218,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@StaticPageID", staticPageID);
                     page =
-                        cn.Query<StaticPage>("GetPageByID", commandType: CommandType.StoredProcedure).FirstOrDefault();
+                        cn.Query<StaticPage>("GetPageByID", p, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
 
                 }
@@ -253,7 +253,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@TagID", tagID);
                     posts =
-                        cn.Query<Post>("GetPostsByTagID", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetPostsByTagID", p,  commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -286,7 +286,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@PostID", postID);
                     hashTags =
-                        cn.Query<HashTag>("GetTagsByPostID", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<HashTag>("GetTagsByPostID", p, commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -319,7 +319,7 @@ namespace FITlosophiData.Repo
                     var p = new DynamicParameters();
                     p.Add("@Amount", amount);
                     posts =
-                        cn.Query<Post>("GetPostsByAmount", commandType: CommandType.StoredProcedure).ToList();
+                        cn.Query<Post>("GetPostsByAmount", p, commandType: CommandType.StoredProcedure).ToList();
 
 
                 }
@@ -339,7 +339,13 @@ namespace FITlosophiData.Repo
 
                 return posts;
             }
+
+
+
         }
+
+
+        public post
 
 
     }
