@@ -28,11 +28,11 @@ namespace FITlosophiBLL
 
                 if (hashtag[0] == '#')
                 {
-                    p.TagName = hashtag.Substring(1);
+                    p.ActualHashTag = hashtag.Substring(1);
                 }
                 else
                 {
-                    p.TagName = hashtag;
+                    p.ActualHashTag = hashtag;
                 }
 
                 post.HashTags.Add(p);
