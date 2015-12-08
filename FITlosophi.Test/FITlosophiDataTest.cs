@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using FITlosophiBLL;
 using FITlosophiData.Models;
 using FITlosophiData.Repo;
@@ -19,6 +20,7 @@ namespace FITlosophi.Test
         public FITlosophiData.Repo.Read Readrepo { get; set; }
         public FITlosophiData.Repo.Delete Deleterepo { get; set; }
         public FITlosophiData.Repo.Update Updaterepo { get; set; }
+        public FITlosophiData.Repo.DropDown dropdownrepo { get; set; }
         public FITlosophiOperations ops { get; set; }
 
 
@@ -29,6 +31,7 @@ namespace FITlosophi.Test
             Readrepo = new Read();
             Deleterepo = new Delete();
             Updaterepo = new Update();
+            dropdownrepo = new DropDown();
 
         }
 
@@ -138,15 +141,15 @@ namespace FITlosophi.Test
         #region Delete
 
 
-        //[Test]
-        //public void DeleteAllTagsByPostID()
-        //{
-        //    Deleterepo.DeleteAllTagsByPostID(4);
+        [Test]
+        public void DeleteAllTagsByPostID()
+        {
+            Deleterepo.DeleteAllTagsByPostID(10);
 
-        //    var post = ops.GetPostByID(4);
+            var tags = Readrepo.GetTagsByPostID(10);
 
-        //    Assert.AreEqual(0, post.HashTags.Count());
-        //}
+            Assert.AreEqual(0, tags.Count);
+        }
 
 
 
@@ -248,6 +251,99 @@ namespace FITlosophi.Test
             Assert.AreEqual(false, newpost.Where(m=> m.PostID == 4).FirstOrDefault(x => x.HasSchedule == false ).HasSchedule);
         }
 
-#endregion
+        #endregion
+
+
+        #region Create
+
+        [Test]
+        public void AddPost()
+        {
+            Post newpost = new Post();
+
+            newpost.CategoryID = 1;
+            newpost.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpost.Title = "My Test Post for data layer";
+            newpost.CoverImgURL = "http://localhost:54909/Content/img/golf.jpg";
+            newpost.Body = "Test Body";
+
+
+            var result = Createrepo.AddPost(newpost);
+
+            Assert.AreEqual(16, result);
+
+        }
+
+
+        [Test]
+        public void AddStaticPage()
+        {
+            StaticPage newpage = new StaticPage();
+
+            newpage.ButtonName = "Koshin Test Page";
+            newpage.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpage.Body = "Test page body";
+
+
+            var result = Createrepo.AddStaticPage(newpage);
+
+            Assert.AreEqual(23, result);
+
+        }
+
+
+        [Test]
+        public void AddTag()
+        {
+         HashTag newtag = new HashTag();
+
+            newtag.ActualHashTag = "Golfwods";
+
+            Createrepo.AddTag(10, newtag);
+
+            var result = Readrepo.GetTagsByPostID(10);
+
+            Assert.AreEqual(2, result.FirstOrDefault(m=> m.TagID == 2).TagID);
+        }
+
+
+        [Test]
+        public void AddNewCategory()
+        {
+            Category newCategory = new Category();
+
+            newCategory.CategoryName = "Organic";
+
+            Createrepo.AddNewCategory(newCategory);
+
+            var result = Readrepo.GetAllCategories();
+
+            Assert.AreEqual("Organic", result.Where(m => m.CategoryID == 7).FirstOrDefault(x => x.CategoryName == "Organic").CategoryName);
+        }
+
+
+
+        #endregion
+
+
+
+        #region DropDown
+
+
+        [Test]
+        public void GetCategoryDropDownList()
+        {
+            List<SelectListItem> categories = new List<SelectListItem>();
+               categories = dropdownrepo.GetCategoryDropDownList();
+
+            Assert.AreEqual(7, categories.Count);
+        }
+
+
+
+        #endregion
+
+
+
     }
 }

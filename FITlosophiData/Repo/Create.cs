@@ -50,7 +50,7 @@ namespace FITlosophiData.Repo
             return post.PostID;
         }
 
-        public void AddStaticPage(StaticPage staticPage)
+        public int? AddStaticPage(StaticPage staticPage)
         {
             using (SqlConnection cn = new SqlConnection(Settings.ConnectionString))
             {
@@ -82,6 +82,8 @@ namespace FITlosophiData.Repo
                 }
 
             }
+
+            return staticPage.StaticPageID;
         }
 
         public void AddTag(int postID, HashTag hashTag)
