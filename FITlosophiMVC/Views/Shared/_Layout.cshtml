@@ -122,7 +122,7 @@
                         <button class="searchbutton" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
-                        <input class="searchfield" id="searchbox" type="text" placeholder="Hashtag Search">
+                        <input class="searchfield ui-autocomplete-input" id="searchbox" type="text" placeholder="Hashtag Search">
                     </form>
                 </div>
             </div>
@@ -198,6 +198,8 @@
 <!--Dynamic Pages Menu -->
 <script src="~/Scripts/app/loadStaticPages.js"></script>
 
+<!--Hashtag Search Autocomplete -->
+<script src="~/Scripts/app/hashTagSearch.js"></script>
 @RenderSection("scripts", required: false)
 
 </body>
