@@ -31,12 +31,27 @@ namespace FITlosophiMVC.Controllers
         public ActionResult Index()
         {
             var ops = new FITlosophiOperations();
-
             var blogVM = new BlogViewModel();
+            var posts = ops.GetPostsByAmount(1000);
 
-            blogVM.Posts = ops.GetPostsByAmount(10);
-            blogVM.Categories = ops.GetAllCategories(); 
-       
+            blogVM.Categories = ops.GetAllCategories();
+            blogVM.TotalPosts = posts.Count();
+            blogVM.Posts = posts.Take(10).ToList();
+
+            return View("Index", blogVM);
+        }
+
+        public ActionResult PostsByPage(int Page)
+        {
+            var ops = new FITlosophiOperations();
+            var blogVM = new BlogViewModel();
+            var posts = ops.GetPostsByAmount(1000);
+
+            blogVM.Categories = ops.GetAllCategories();
+            blogVM.TotalPosts = posts.Count();
+            blogVM.Posts = posts.Skip((4 * Page) - 4).Take(10).ToList();
+            blogVM.Page = Page;
+
             return View("Index", blogVM);
         }
 
