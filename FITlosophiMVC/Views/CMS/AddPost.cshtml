@@ -11,14 +11,15 @@
         
         <br/>
 
-        <form action="/CMS/Postpost" method="POST" accept-charset="utf-8" class="contact-form">
+        <form action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
+            
             <input type="text" name="Title" id="PostTitle" placeholder="Title" class="form-control input-lg">
 
             <select class="form-control categoryPlaceholder" name="CategoryID" id="PostCategoryID">
                 <option value="0" disabled selected hidden>Category</option>
             </select>
 
-            <input type="text" name ="CoverImgURL" id="CoverImgURL" placeholder="Cover Image URL" class="form-control input-lg" />
+            <input type="text" name="CoverImgURL" id="CoverImgURL" placeholder="Cover Image URL" class="form-control input-lg"/>
 
             <ul id="tagit">
             </ul >
@@ -29,8 +30,8 @@
 
             <div class="buttons clearfix">
                 <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
-                @*<button id="modalLaunch"class="btn btn-xlarge btn-tales-one">Image</button>*@
             </div>
+
         </form>
     </div>
 </div>
@@ -53,5 +54,6 @@
 <!--Tagit JS Library and Initializer-->
 <script src="~/Scripts/tagit/tag-it.js" type="text/javascript" charset="utf-8"></script>
 <script src="~/Scripts/tagit/TagitInitializer.js"></script>
+
 <script src="~/Scripts/app/AddPost.js"></script>
 }

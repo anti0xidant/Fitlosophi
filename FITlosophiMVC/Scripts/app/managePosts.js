@@ -88,7 +88,7 @@ function createTableDataManagePosts(post, index) {
             publishBtn = '<button class=\"btn btn-tales-one btn-xs btnPublishPost\" value=\"' + post.PostID + '\">Publish</button>';
         }
 
-        return '<tr><td>' + (index + 1) + '</td><td>' + post.DateCreated + '</td><td>' + post.Title + '</td><td>' + post.WriterName + '</td><td>' + datePublished + '</td></td><td><button class=\"btn btn-tales-two btn-xs btnEditPost\" value=\"' + post.PostID + '\">Edit</button></td>' +
+        return '<tr><td>' + (index + 1) + '</td><td>' + post.DateCreated + '</td><td>' + post.Title + '</td><td>' + post.WriterName + '</td><td>' + datePublished + '</td></td><td><a class=\"btn btn-tales-two btn-xs btnEditPost\" href="/CMS/EditPost?id=' + post.PostID + '\">Edit Post</a></td>' +
             '<td><button class=\"btn btn-danger btn-xs btnDeletePost\" value=\"' + post.PostID + '\">Delete</button></td><td>' + publishBtn + '</td></tr>';
     }
 }

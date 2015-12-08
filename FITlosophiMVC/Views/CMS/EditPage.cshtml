@@ -7,6 +7,7 @@
         <br />
 
         <form action="/CMS/EditPage" method="POST" accept-charset="utf-8" class="contact-form">
+            
             <input type="hidden" name="StaticPageID" value="@Model.StaticPageID"/>
 
             <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg" value="@Model.ButtonName">
@@ -21,6 +22,7 @@
                 <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
                 <input id="modalLaunch" class="btn btn-xlarge btn-tales-two" type="button" value="Image"/>
             </div>
+
         </form>
     </div>
 </div>

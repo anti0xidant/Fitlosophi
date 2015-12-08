@@ -33,7 +33,8 @@ namespace FITlosophiMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Postpost(Post post)
+        [Authorize]
+        public ActionResult PostPost(Post post)
         {
             var create = new FITlosophiOperations();
 
@@ -42,7 +43,26 @@ namespace FITlosophiMVC.Controllers
             return View("ManagePosts");
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles="Admin")]
+        public ActionResult EditPost(int id)
+        {
+            var read = new FITlosophiOperations();
+
+            var postToEdit = read.GetPostByID(id);
+
+            return View(postToEdit);
+        }
+
+        [HttpPost]
+        [Authorize(Roles="Admin")]
+        public ActionResult EditPost(Post post)
+        {
+            var update = new FITlosophiOperations();
+
+            update.EditPost(post);
+
+            return View("ManagePosts");
+        }
 
         #endregion
 
@@ -55,14 +75,14 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult AddPage()
         {
-
-
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult PostPage(StaticPage page)
         {
             var create = new FITlosophiOperations();
@@ -72,6 +92,7 @@ namespace FITlosophiMVC.Controllers
             return View("ManagePages");
         }
 
+        [Authorize(Roles="Admin")]
         public ActionResult EditPage(int id)
         {
             var read = new FITlosophiOperations();
@@ -82,6 +103,7 @@ namespace FITlosophiMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles="Admin")]
         public ActionResult EditPage(StaticPage page)
         {
             var update = new FITlosophiOperations();
