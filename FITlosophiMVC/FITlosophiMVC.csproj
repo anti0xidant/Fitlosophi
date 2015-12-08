@@ -205,6 +205,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogDetailViewModel.cs" />
     <Compile Include="Models\BlogViewModel.cs" />
+    <Compile Include="Models\CMSViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,12 +220,28 @@
     <Content Include="Content\css\styles-greyred.css" />
     <Content Include="Content\css\tagit\jquery.tagit.css" />
     <Content Include="Content\css\tagit\tagit.ui-zendesk.css" />
+    <Content Include="Content\img\Bike.jpg" />
+    <Content Include="Content\img\Boxing.jpg" />
     <Content Include="Content\img\competition.jpg" />
+    <Content Include="Content\img\Cooking.jpg" />
+    <Content Include="Content\img\DarkChocolate.jpg" />
     <Content Include="Content\img\eating.jpg" />
+    <Content Include="Content\img\Eggs.jpg" />
     <Content Include="Content\img\food.jpg" />
     <Content Include="Content\img\foodSmall.jpg" />
     <Content Include="Content\img\golf.jpg" />
+    <Content Include="Content\img\Kickbad.jpg" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\NatureKick.jpg" />
+    <Content Include="Content\img\Recipes.jpg" />
+    <Content Include="Content\img\Run.jpg" />
+    <Content Include="Content\img\SeeOrganic.jpg" />
+    <Content Include="Content\img\Spices.jpg" />
+    <Content Include="Content\img\Tasty.jpg" />
+    <Content Include="Content\img\Vegetable.jpg" />
+    <Content Include="Content\img\Waterfall.jpg" />
+    <Content Include="Content\img\Weights.jpg" />
+    <Content Include="Content\img\yoga-pose.jpg" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Content\node_modules\bootstrap\dist\css\bootstrap.css" />
@@ -527,6 +544,7 @@
     <Content Include="Views\Shared\_ManagePostsModal.cshtml" />
     <Content Include="Views\Shared\_AddImageModal.cshtml" />
     <Content Include="Views\Shared\_ImageURLGenerator.cshtml" />
+    <Content Include="Views\CMS\EditPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

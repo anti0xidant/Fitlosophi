@@ -10,14 +10,14 @@
         
         <br />
 
-        <form action="/CMS/Postpage" method="POST" accept-charset="utf-8" class="contact-form">
+        <form action="/CMS/PostPage" method="POST" accept-charset="utf-8" class="contact-form">
             <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg">
 
             <br/>
 
             <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg"></textarea>
 
-            <input type="hidden" name="UserID" value=@User.Identity.GetUserId()/>
+            <input type="hidden" name="UserID" value=@User.Identity.GetUserId()>
 
             <div class="buttons clearfix">
                 <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
@@ -41,5 +41,5 @@
 
     <!-- TinyMCE Initializer -->
     <script src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
-<script src="~/Scripts/app/AddPage.js"></script>
+    <script src="~/Scripts/app/AddPage.js"></script>
 }

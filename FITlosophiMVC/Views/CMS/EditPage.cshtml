@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNet.Identity
+@model FITlosophiData.Models.StaticPage
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 tales-superblock" id="contact">
+
+        <br />
+
+        <form action="/CMS/EditPage" method="POST" accept-charset="utf-8" class="contact-form">
+            <input type="hidden" name="StaticPageID" value="@Model.StaticPageID"/>
+
+            <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg" value="@Model.ButtonName">
+
+            <br/>
+
+            <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg">@Model.Body</textarea>
+
+            <input type="hidden" name="UserID" value=@User.Identity.GetUserId()>
+
+            <div class="buttons clearfix">
+                <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
+                <input id="modalLaunch" class="btn btn-xlarge btn-tales-two" type="button" value="Image"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@Html.Partial("_ImageURLGenerator");
+
+
+
+@section Scripts{
+    <!--Image Upload Modal-->
+    <script src="~/Scripts/app/imageUploader.js"></script>
+    <script src='~/Scripts/cloudinary/jquery.ui.widget.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.iframe-transport.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.fileupload.js' type='text/javascript'></script>
+    <script src='~/Scripts/cloudinary/jquery.cloudinary.js' type='text/javascript'></script>
+
+    <!-- TinyMCE Initializer -->
+    <script src="~/Scripts/tinymce/TinyMCEInitializer.js"></script>
+    <script src="~/Scripts/app/AddPage.js"></script>
+}
