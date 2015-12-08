@@ -1,39 +1,38 @@
 ﻿@using System.Activities.Statements
-@model FITlosophiData.Models.Post
+@model FITlosophiMVC.Models.BlogDetailViewModel
 
 @{
     ViewBag.Title = "Detail";
 }
-<div class="widewrapper main">
-    <div class="container">
+
         <div class="row">
             <div class="col-md-8 blog-main">
                 <article class="blog-post">
                     <header>
-                        <h1>@Model.Title</h1>
+                        <h1>@Model.UserSelectedPost.Title</h1>
                         <div class="lead-image">
-                            <img src= @Model.CoverImgURL alt="CoverImage" class="img-responsive">
+                            <img src= @Model.UserSelectedPost.CoverImgURL alt="CoverImage" class="img-responsive">
                             <div class="meta clearfix">
 
                                 <div class="author">
                                     <i class="fa fa-user"></i>
-                                    <span class="data">@Model.WriterName</span>
+                                    <span class="data">@Model.UserSelectedPost.WriterName</span>
                                 </div>
                                 <div class="date">
                                     <i class="fa fa-calendar"></i>
-                                    <span class="data">@Model.DatePublished</span>
+                                    <span class="data">@Model.UserSelectedPost.DatePublished</span>
                                 </div>
                             </div>
                         </div>
                     </header>
                     <div class="body">
-                        @Html.Raw(Model.Body)
+                        @Html.Raw(Model.UserSelectedPost.Body)
                     </div>
                     <hr />
                     <div class="HashTags">
-                        @foreach (var tag in Model.HashTags)
+                        @foreach (var tag in Model.UserSelectedPost.HashTags)
                         {
-                            @Html.ActionLink("#" + tag.ActualHashTag +" ", "Index?TagID=" +tag.TagID, "Home")
+                            <a href="/Home/BlogByTagID?TagID=@tag.TagID">#@tag.ActualHashTag</a>
                         }
                     </div>
                 </article>
@@ -45,31 +44,36 @@
                     </header>
                     <div class="body clearfix">
                         <ul class="tags">
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Nutrition</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">Fitness</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Wellness</a></li>
+                            @if (Model.Categories.Count > 0)
+                            {
+                                foreach (var cat in Model.Categories)
+                                {
+                                    <li><a href="/Home/BlogByCategoryID?CategoryID=@cat.CategoryID">@cat.CategoryName</a></li>
+                                }
+                                <li><a href="/Home/Index">All Categories</a></li>
+                            }
                         </ul>
                     </div>
                 </div>
-                <div class="aside-widget">
-                    <header>
-                        <h3>Read More...</h3>
-                    </header>
-                    <div class="body">
-                        <ul class="tales-list">
-                            <li><a href="index.html">Healthy Living</a></li>
-                            <li><a href="#">Food for Thought</a></li>
-                            <li><a href="#">Training in the Offseason</a></li>
-                            <li><a href="#">Yoga is for Everyone</a></li>
-                            <li><a href="#">5 Ab Crushing Workouts</a></li>
-                        </ul>
+                @if (Model.Posts.Count > 0)
+                {
+                    <div class="aside-widget">
+                        <header>
+                            <h3>Read More...</h3>
+                        </header>
+                        <div class="body">
+                            <ul class="tales-list">
+                                @for (int i = 0; i < @Model.Posts.Count; i++)
+                                {
+                                    if (i < 9)
+                                    {
+                                        <li><a href="/Home/BlogDetail?PostID=@Model.Posts[i].PostID">@Model.Posts[i].Title</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                }
             </aside>
             </div>
-    </div>
-</div>
 
