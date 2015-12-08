@@ -545,6 +545,7 @@
     <Content Include="Views\Shared\_AddImageModal.cshtml" />
     <Content Include="Views\Shared\_ImageURLGenerator.cshtml" />
     <Content Include="Views\CMS\EditPage.cshtml" />
+    <Content Include="Views\CMS\EditPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
