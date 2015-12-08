@@ -35,7 +35,6 @@ namespace FITlosophiMVC.Controllers
             var blogVM = new BlogViewModel();
 
             blogVM.Posts = ops.GetPostsByAmount(10);
-            blogVM.HashTags = ops.GetAllTags();
             blogVM.Categories = ops.GetAllCategories(); 
        
             return View("Index", blogVM);
@@ -48,7 +47,6 @@ namespace FITlosophiMVC.Controllers
             var blogVM = new BlogViewModel();
 
             blogVM.Posts = ops.GetAllPostsByCategory(CategoryID);
-            blogVM.HashTags = ops.GetAllTags();
             blogVM.Categories = ops.GetAllCategories();
 
             return View("Index", blogVM);
@@ -61,7 +59,6 @@ namespace FITlosophiMVC.Controllers
             var blogVM = new BlogViewModel();
 
             blogVM.Posts = ops.GetPostsByTagID(TagID);
-            blogVM.HashTags = ops.GetAllTags();
             blogVM.Categories = ops.GetAllCategories();
 
             return View("Index", blogVM);
@@ -82,9 +79,18 @@ namespace FITlosophiMVC.Controllers
 
         public ActionResult BlogDetail(int postID)
         {
+            var blogDetailVM = new BlogDetailViewModel();
+
             var ops = new FITlosophiOperations();
-            var post = ops.GetPostByID(postID);
-            return View(post);
+
+            blogDetailVM.UserSelectedPost = ops.GetPostByID(postID);
+            blogDetailVM.Categories = ops.GetAllCategories();
+            var readMorePosts = ops.GetPostsByAmount(10);
+
+            blogDetailVM.Posts = readMorePosts.Where(p => p.PostID != postID).ToList();
+
+
+            return View(blogDetailVM);
         }
 
     }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using FITlosophiData.Models;
-using FITlosophiMVC.Controllers.APIControllers;
 
 namespace FITlosophiMVC.Models
 {
-    public class BlogViewModel
+    public class BlogDetailViewModel
     {
         public List<Category> Categories { get; set; }
         public List<Post> Posts { get; set; }
+        public Post UserSelectedPost { get; set; }
     }
 }
