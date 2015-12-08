@@ -11,5 +11,12 @@ namespace FITlosophiMVC.Models
     {
         public List<Category> Categories { get; set; }
         public List<Post> Posts { get; set; }
+        public int Page { get; set; }
+        public int TotalPosts { get; set; }
+
+        public BlogViewModel()
+        {
+            Page = 1;
+        }
     }
 }
