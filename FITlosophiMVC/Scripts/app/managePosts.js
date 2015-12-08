@@ -79,13 +79,17 @@ function createTableDataManagePosts(post, index) {
     if (post.IsActive) {
         //var dateCreated = $.format.date(post.DateCreated, "dd~MM~yyyy");
         var datePublished = '';
+        var publishBtn = '';
 
+        //Display the published date if it has been published, if not create a publish button
         if (post.DatePublished) {
             datePublished = post.DatePublished;
+        } else {
+            publishBtn = '<button class=\"btn btn-tales-one btn-xs btnPublishPost\" value=\"' + post.PostID + '\">Publish</button>';
         }
 
-        return '<tr><td>' + (index + 1) + '</td><td>' + post.DateCreated + '</td><td>' + post.Title + '</td><td>' + post.WriterName + '</td><td>' + datePublished + '</td></td><td><button class=\"btn btn-primary btn-xs btnEditPost\" value=\"' + post.PostID + '\">Edit</button></td>' +
-            '<td><button class=\"btn btn-danger btn-xs btnDeletePost\" value=\"' + post.PostID + '\">Delete</button></td><td><button class=\"btn btn-success btn-xs btnPublishPost\" value=\"' + post.PostID + '\">Publish</button></td></tr>';
+        return '<tr><td>' + (index + 1) + '</td><td>' + post.DateCreated + '</td><td>' + post.Title + '</td><td>' + post.WriterName + '</td><td>' + datePublished + '</td></td><td><button class=\"btn btn-tales-two btn-xs btnEditPost\" value=\"' + post.PostID + '\">Edit</button></td>' +
+            '<td><button class=\"btn btn-danger btn-xs btnDeletePost\" value=\"' + post.PostID + '\">Delete</button></td><td>' + publishBtn + '</td></tr>';
     }
 }
 
