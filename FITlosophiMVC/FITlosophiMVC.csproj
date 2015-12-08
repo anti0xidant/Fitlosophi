@@ -204,6 +204,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogViewModel.cs" />
+    <Compile Include="Models\CMSViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -525,6 +526,7 @@
     <Content Include="Views\Shared\_ManagePostsModal.cshtml" />
     <Content Include="Views\Shared\_AddImageModal.cshtml" />
     <Content Include="Views\Shared\_ImageURLGenerator.cshtml" />
+    <Content Include="Views\CMS\EditPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

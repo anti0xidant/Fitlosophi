@@ -1,21 +1,19 @@
 ﻿@using Microsoft.AspNet.Identity
 @model FITlosophiData.Models.StaticPage
 
-@{
-    ViewBag.Title = "AddPage";
-}
-
 <div class="row">
     <div class="col-md-6 col-md-offset-3 tales-superblock" id="contact">
-        
+
         <br />
 
-        <form action="/CMS/PostPage" method="POST" accept-charset="utf-8" class="contact-form">
-            <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg">
+        <form action="/CMS/EditPage" method="POST" accept-charset="utf-8" class="contact-form">
+            <input type="hidden" name="StaticPageID" value="@Model.StaticPageID"/>
+
+            <input type="text" name="ButtonName" id="ButtonName" placeholder="Button Name" class="form-control input-lg" value="@Model.ButtonName">
 
             <br/>
 
-            <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg"></textarea>
+            <textarea rows="10" name="Body" id="tinymce" class="form-control input-lg">@Model.Body</textarea>
 
             <input type="hidden" name="UserID" value=@User.Identity.GetUserId()>
 

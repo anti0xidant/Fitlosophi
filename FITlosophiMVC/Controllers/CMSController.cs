@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using FITlosophiBLL;
 using FITlosophiData.Models;
+using FITlosophiMVC.Models;
 
 namespace FITlosophiMVC.Controllers
 {
@@ -16,6 +18,13 @@ namespace FITlosophiMVC.Controllers
             return View();
         }
 
+        #region Post
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult ManagePosts()
+        {
+            return View();
+        }
 
         [Authorize]
         public ActionResult AddPost()
@@ -34,6 +43,18 @@ namespace FITlosophiMVC.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+
+        #endregion
+
+        #region Page
+
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult ManagePages()
+        {
+            return View();
+        }
+
         public ActionResult AddPage()
         {
 
@@ -42,7 +63,7 @@ namespace FITlosophiMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult postpage(StaticPage page)
+        public ActionResult PostPage(StaticPage page)
         {
             var create = new FITlosophiOperations();
 
@@ -51,18 +72,28 @@ namespace FITlosophiMVC.Controllers
             return View("ManagePages");
         }
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult ManagePosts()
+        public ActionResult EditPage(int id)
         {
-            return View();
+            var read = new FITlosophiOperations();
+
+            var pageToEdit = read.GetPageByID(id);
+
+            return View(pageToEdit);
         }
 
-
-        [Authorize(Roles = "Admin")]
-        public ActionResult ManagePages()
+        [HttpPost]
+        public ActionResult EditPage(StaticPage page)
         {
-            return View();
+            var update = new FITlosophiOperations();
+
+            update.EditPage(page);
+
+            return View("ManagePages");
         }
+
+        #endregion
+
+
 
     }
 }
