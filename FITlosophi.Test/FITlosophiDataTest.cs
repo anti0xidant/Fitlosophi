@@ -54,7 +54,7 @@ namespace FITlosophi.Test
         {
             List<StaticPage> pages = Readrepo.GetAllPageSummaries();
 
-            Assert.AreEqual(9, pages.FirstOrDefault(m => m.StaticPageID == 9).StaticPageID);
+            Assert.AreEqual(1, pages.FirstOrDefault(m => m.StaticPageID == 1).StaticPageID);
         }
 
 
@@ -79,7 +79,7 @@ namespace FITlosophi.Test
         [Test]
         public void GetAllPostsByCategory()
         {
-            List<Post> posts = Readrepo.GetAllPostsByCategory(2);
+            List<Post> posts = Readrepo.GetAllPostsByCategory(4);
 
             Assert.AreEqual(1, posts.FirstOrDefault(m => m.PostID == 1).PostID);
         }
@@ -90,14 +90,14 @@ namespace FITlosophi.Test
         {
             var post = Readrepo.GetPostByID(1);
 
-            Assert.AreEqual("5 Tips for Healthy Eating", post.Title);
+            Assert.AreEqual("Golf Swing Workouts", post.Title);
         }
 
 
         [Test]
         public void GetPageByID()
         {
-            var page = Readrepo.GetPageByID(10);
+            var page = Readrepo.GetPageByID(2);
 
             Assert.AreEqual("Weekly Meals", page.ButtonName);
         }
@@ -124,9 +124,9 @@ namespace FITlosophi.Test
         [Test]
         public void GetPostsByAmount()
         {
-            var posts = Readrepo.GetPostsByAmount(3);
+            var posts = Readrepo.GetPostsByAmount(5);
 
-            Assert.AreEqual(1, posts.FirstOrDefault(m => m.PostID == 1).PostID);
+            Assert.AreEqual(4, posts.FirstOrDefault(m => m.PostID == 4).PostID);
         }
 
 
@@ -156,9 +156,9 @@ namespace FITlosophi.Test
         [Test]
         public void DeletePage()
         {
-            Deleterepo.DeletePage(22);
+            Deleterepo.DeletePage(5);
 
-            var page = Readrepo.GetPageByID(22);
+            var page = Readrepo.GetPageByID(5);
 
             Assert.AreEqual(false, page.IsActive);
         }
@@ -210,27 +210,27 @@ namespace FITlosophi.Test
         {
             StaticPage newpage = new StaticPage();
 
-            newpage.StaticPageID = 22;
-            newpage.ButtonName = "Koshin Hits";
+            newpage.StaticPageID = 5;
+            newpage.ButtonName = "Koshin";
             newpage.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
-            newpage.Body = "day to day";
+            newpage.Body = "days today";
 
             Updaterepo.EditPage(newpage);
 
-            var newbody = Readrepo.GetPageByID(22);
+            var newbody = Readrepo.GetPageByID(5);
 
-            Assert.AreEqual("day to day", newbody.Body);
+            Assert.AreEqual("days today", newbody.Body);
         }
 
 
         [Test]
         public void PublishPage()
         {
-            Updaterepo.PublishPage(9);
+            Updaterepo.PublishPage(4);
 
             var newpage = Readrepo.GetAllPageSummaries();
 
-            Assert.AreEqual(true, newpage.Where(m => m.StaticPageID == 9).FirstOrDefault(x=> x.IsPublished == true).IsPublished);
+            Assert.AreEqual(true, newpage.Where(m => m.StaticPageID == 4).FirstOrDefault(x=> x.IsPublished == true).IsPublished);
         }
 
 
@@ -270,7 +270,7 @@ namespace FITlosophi.Test
 
             var result = Createrepo.AddPost(newpost);
 
-            Assert.AreEqual(16, result);
+            Assert.AreEqual(22, result);
 
         }
 
@@ -287,7 +287,7 @@ namespace FITlosophi.Test
 
             var result = Createrepo.AddStaticPage(newpage);
 
-            Assert.AreEqual(23, result);
+            Assert.AreEqual(6, result);
 
         }
 
@@ -303,7 +303,7 @@ namespace FITlosophi.Test
 
             var result = Readrepo.GetTagsByPostID(10);
 
-            Assert.AreEqual(2, result.FirstOrDefault(m=> m.TagID == 2).TagID);
+            Assert.AreEqual(9, result.FirstOrDefault(m=> m.TagID == 9).TagID);
         }
 
 
@@ -336,7 +336,7 @@ namespace FITlosophi.Test
             List<SelectListItem> categories = new List<SelectListItem>();
                categories = dropdownrepo.GetCategoryDropDownList();
 
-            Assert.AreEqual(7, categories.Count);
+            Assert.AreEqual(12, categories.Count);
         }
 
 

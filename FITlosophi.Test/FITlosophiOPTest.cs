@@ -41,7 +41,7 @@ namespace FITlosophi.Test
         {
             var posts = ops.GetAllPostsByCategory(2);
 
-            Assert.AreEqual(1, posts.FirstOrDefault(m=> m.PostID ==1).PostID);
+            Assert.AreEqual(2, posts.FirstOrDefault(m=> m.PostID ==2).PostID);
         }
 
 
@@ -69,7 +69,7 @@ namespace FITlosophi.Test
         {
             var post = ops.GetPostByID(1);
 
-            Assert.AreEqual(2, post.CategoryID);
+            Assert.AreEqual(4, post.CategoryID);
         }
 
         #endregion
@@ -101,7 +101,7 @@ namespace FITlosophi.Test
         {
             List<SelectListItem> categories = ops.GetCategoryDropDownList();
 
-            Assert.AreEqual(7, categories.Count);
+            Assert.AreEqual(12, categories.Count);
         }
 
 

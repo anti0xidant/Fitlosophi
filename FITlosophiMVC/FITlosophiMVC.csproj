@@ -217,8 +217,6 @@
     <Content Include="Content\css\blogSummary.css" />
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\styles-bluegreen.css" />
-    <Content Include="Content\css\styles-bluered.css" />
-    <Content Include="Content\css\styles-greyred.css" />
     <Content Include="Content\css\tagit\jquery.tagit.css" />
     <Content Include="Content\css\tagit\tagit.ui-zendesk.css" />
     <Content Include="Content\img\about-me.png" />
