@@ -8,11 +8,11 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 tales-superblock" id="contact">
-        
+
         <br/>
 
         <form action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
-            
+
             <input type="text" name="Title" id="PostTitle" placeholder="Title" class="form-control input-lg">
 
             <select class="form-control categoryPlaceholder" name="CategoryID" id="PostCategoryID">
@@ -35,9 +35,10 @@
 
         </form>
     </div>
+    @Html.Partial("_ImageGallery")
 </div>
 
-@Html.Partial("_AddImageModal");
+@Html.Partial("_AddImageModal")
 
 
 
@@ -57,4 +58,7 @@
 <script src="~/Scripts/tagit/TagitInitializer.js"></script>
 
 <script src="~/Scripts/app/AddPost.js"></script>
+<script src="~/Scripts/leastjs/js/libs/least/least.js"></script>
+<script src="~/Scripts/app/imageGallery.js"></script>
+
 }

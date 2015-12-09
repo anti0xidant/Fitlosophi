@@ -3,7 +3,7 @@
     $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
     
     //Setup input form for image upload to Cloudinary
-    $('.upload_form').append($.cloudinary.unsigned_upload_tag("bep61vxi", { cloud_name: 'dk0wmifkq' }));
+    $('.upload_form').append($.cloudinary.unsigned_upload_tag("bep61vxi", { cloud_name: 'dk0wmifkq', tags: 'blogImage' }));
 
 
     $('.cloudinary_fileupload').bind('cloudinarydone', function (e, data) {

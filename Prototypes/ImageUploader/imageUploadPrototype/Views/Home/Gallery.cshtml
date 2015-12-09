@@ -37,6 +37,7 @@
 <script>
         $(document).ready(function () {
             $('.least-gallery').least();
+
             $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
             var url = $.cloudinary.url('blogImage', { format: 'json', type: 'list' });
             $.ajax({
