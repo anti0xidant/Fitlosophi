@@ -179,10 +179,16 @@
     <Content Include="Views\Home\TinyMCE.cshtml" />
     <Content Include="Views\Home\TinyMCEPost.cshtml" />
     <Content Include="Views\Home\DisplayPage.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\app\" />
+    <Folder Include="Scripts\leastjs\css\" />
+    <Folder Include="Scripts\leastjs\img\" />
+    <Folder Include="Scripts\leastjs\js\" />
+    <Folder Include="Scripts\leastjs\media\" />
+    <Folder Include="Scripts\leastjs\scss\" />
     <Folder Include="Scripts\tinymce\" />
   </ItemGroup>
   <ItemGroup>

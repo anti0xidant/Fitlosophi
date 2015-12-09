@@ -1,3 +1,24 @@
 ﻿.blogSummary {
     height: 180px;
 }
+
+
+
+.NoPost {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+
+}
+
+
+.oopsimg {
+    padding-top: -20px;    
+}
+
+
+.searchfield  {
+    
+}

@@ -7,7 +7,7 @@
         success: function (data, status, xhr) {
 
             $.each(data, function (index, hashTag) {
-                tags.push(hashTag.TagName);
+                tags.push({ value: hashTag.TagID, label: hashTag.TagName});
             });
 
         }

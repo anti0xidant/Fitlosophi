@@ -215,6 +215,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\blogSummary.css" />
+    <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\styles-bluegreen.css" />
     <Content Include="Content\css\tagit\jquery.tagit.css" />
     <Content Include="Content\css\tagit\tagit.ui-zendesk.css" />
@@ -224,6 +225,7 @@
     <Content Include="Content\img\Cooking.jpg" />
     <Content Include="Content\img\CrossFit.jpg" />
     <Content Include="Content\img\DarkChocolate.jpg" />
+    <Content Include="Content\img\Drawing %281%29.png" />
     <Content Include="Content\img\eating.jpg" />
     <Content Include="Content\img\Eggs.jpg" />
     <Content Include="Content\img\food.jpg" />
@@ -232,6 +234,7 @@
     <Content Include="Content\img\Kickbad.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\NatureKick.jpg" />
+    <Content Include="Content\img\oops-sign.jpg" />
     <Content Include="Content\img\Recipes.jpg" />
     <Content Include="Content\img\Run.jpg" />
     <Content Include="Content\img\SeeOrganic.jpg" />
@@ -263,6 +266,7 @@
     <Content Include="Scripts\app\blogIndex.js" />
     <Content Include="Scripts\app\EditPost.js" />
     <Content Include="Scripts\app\hashTagSearch.js" />
+    <Content Include="Scripts\app\imageGallery.js" />
     <Content Include="Scripts\app\imageUploader.js" />
     <Content Include="Scripts\app\loadStaticPages.js" />
     <Content Include="Scripts\app\managePages.js" />
@@ -321,6 +325,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\leastjs\css\least.min.css" />
+    <Content Include="Scripts\leastjs\img\close.svg" />
+    <Content Include="Scripts\leastjs\img\loading.svg" />
+    <Content Include="Scripts\leastjs\js\libs\jquery\2.0.2\jquery.min.js" />
+    <Content Include="Scripts\leastjs\js\libs\least\least.js" />
+    <Content Include="Scripts\leastjs\js\libs\least\least.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -546,9 +556,25 @@
     <Content Include="Views\Shared\_ImageURLGenerator.cshtml" />
     <Content Include="Views\CMS\EditPage.cshtml" />
     <Content Include="Views\CMS\EditPost.cshtml" />
+    <Content Include="Views\Shared\_ImageGallery.cshtml" />
+    <Content Include="Scripts\leastjs\css\least.min.css.map" />
+    <Content Include="Scripts\leastjs\js\libs\.DS_Store" />
+    <Content Include="Scripts\leastjs\js\libs\jquery\.DS_Store" />
+    <Content Include="Scripts\leastjs\js\libs\least\least.min.map" />
+    <Content Include="Scripts\leastjs\scss\.sass-cache\1dc002cbb423ba98493bed62bbbe710ba275f8df\_least.scssc" />
+    <Content Include="Scripts\leastjs\scss\.sass-cache\3c10c9d43c62d135dc38651bb0a65255a6b792bb\styles.scssc" />
+    <Content Include="Scripts\leastjs\scss\.sass-cache\6fc77d9cab61cdacf8b45ec748c84166d5581bfd\_global.scssc" />
+    <Content Include="Scripts\leastjs\scss\.sass-cache\6fc77d9cab61cdacf8b45ec748c84166d5581bfd\_mixins.scssc" />
+    <Content Include="Scripts\leastjs\scss\.sass-cache\6fc77d9cab61cdacf8b45ec748c84166d5581bfd\_options.scssc" />
+    <Content Include="Scripts\leastjs\scss\assets\_global.scss" />
+    <Content Include="Scripts\leastjs\scss\assets\_mixins.scss" />
+    <Content Include="Scripts\leastjs\scss\assets\_options.scss" />
+    <Content Include="Scripts\leastjs\scss\styles.scss" />
+    <Content Include="Scripts\leastjs\scss\templates\_least.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\leastjs\js\libs\least\min\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
