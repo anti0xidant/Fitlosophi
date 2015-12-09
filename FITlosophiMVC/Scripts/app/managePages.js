@@ -75,8 +75,8 @@ function loadStaticPages() {
 
 // Creates HTML table row of player data which is used to populate Roster Table in loadRoster()
 function createTableDataStaticPages(staticPage, index) {
+
     if (staticPage.IsActive) {
-        //var dateCreated = $.format.date(post.DateCreated, "dd~MM~yyyy");
         var datePublished = '';
         var publishBtn = '';
 
@@ -88,7 +88,7 @@ function createTableDataStaticPages(staticPage, index) {
         }
 
         return '<tr><td>' + (index + 1) + '</td><td>' + staticPage.DateCreated + '</td><td>' + staticPage.ButtonName + '</td><td>' + datePublished + '</td></td><td><a class=\"btn btn-primary btn-xs btnEditPage\" href="/CMS/EditPage?id=' + staticPage.StaticPageID + '\">Edit</a></td>' +
-            '<td><button class=\"btn btn-danger btn-xs btnDeletePage\" value=\"' + staticPage.StaticPageID + '\">Delete</button></td><td><button class=\"btn btn-success btn-xs btnPublishPage\" value=\"' + staticPage.StaticPageID + '\">Publish</button></td></tr>';
+            '<td><button class=\"btn btn-danger btn-xs btnDeletePage\" value=\"' + staticPage.StaticPageID + '\">Delete</button></td><td>' + publishBtn +'</td></tr>';
         
     }
 }
