@@ -262,6 +262,7 @@
     <Content Include="Scripts\app\AddPage.js" />
     <Content Include="Scripts\app\AddPost.js" />
     <Content Include="Scripts\app\blogIndex.js" />
+    <Content Include="Scripts\app\EditPost.js" />
     <Content Include="Scripts\app\hashTagSearch.js" />
     <Content Include="Scripts\app\imageUploader.js" />
     <Content Include="Scripts\app\loadStaticPages.js" />
