@@ -17,38 +17,32 @@ namespace FITlosophiBLL
         public void AddPost(Post post)
         {
             // Parse Tags into separate hash tags
-            var hashtags = post.Tags.Split(',');
-
-            // Initialize list of HashTags in post
-            post.HashTags = new List<HashTag>();
-            
-            foreach (var hashtag in hashtags)
+            if (post.Tags != null)
             {
-                var p = new HashTag();
+                var hashtags = post.Tags.Replace("#", "").Split(',');
 
-                if (hashtag[0] == '#')
+                foreach (var hashtag in hashtags)
                 {
-                    p.ActualHashTag = hashtag.Substring(1);
-                }
-                else
-                {
-                    p.ActualHashTag = hashtag;
-                }
+                    if (hashtag != "")
+                    {
+                        var p = new HashTag();
 
-                post.HashTags.Add(p);
+                        p.ActualHashTag = hashtag;
+                        post.HashTags.Add(p);
+                    }
+                }
             }
 
             var create = new Create();
             var postID = create.AddPost(post);
 
             // Check if post add was successful and returned the new postID
-            if (postID != null)
+            if (postID != null && post.HashTags.Count() != 0)
             {
                 foreach (var tag in post.HashTags)
                 {
                     create.AddTag((int) postID, tag);
                 }
-
             }
         }
 
@@ -176,9 +170,46 @@ namespace FITlosophiBLL
 
         public void EditPost(Post post)
         {
+            // Overwrite post with edited data
             var update = new Update();
 
             update.EditPost(post);
+
+            // Delete all hashtags associated with post from PostsXTags table
+            var delete = new Delete();
+
+            delete.DeleteAllTagsByPostID(post.PostID);
+
+            // Split up tags string from UI into individual hashtags. Then remove all # symbols. 
+            // Afterwards, only tags that contain characters are added to the HashTags list.
+            if (post.Tags != null)
+            {
+                var hashtags = post.Tags.Replace("#", "").Split(',');
+
+                foreach (var hashtag in hashtags)
+                {
+                    if (hashtag != "")
+                    {
+                        var p = new HashTag();
+
+                        p.ActualHashTag = hashtag;
+                        post.HashTags.Add(p);
+                    }
+                }
+            }
+
+            // Iterate: Check if hashtag is in Tags table. If not, create a new record in that table
+            // before creating a new record in PostsXTags. Else, just create new record in PostsXTags.
+            if (post.HashTags.Count() != 0)
+            {
+                var create = new Create();
+
+                foreach (var tag in post.HashTags)
+                {
+                    create.AddTag((int)post.PostID, tag);
+                }
+            }
+
         }
 
         public void PublishPage(int staticPageID)

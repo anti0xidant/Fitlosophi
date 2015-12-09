@@ -10,9 +10,9 @@
 
         <br />
 
-        <form action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
+        <form action="/CMS/EditPost" method="POST" accept-charset="utf-8" class="contact-form">
 
-            <input type="hidden" value="@Model.PostID">
+            <input type="hidden" name="PostID" value="@Model.PostID">
 
             <input type="text" name="Title" id="PostTitle" placeholder="Title" class="form-control input-lg" value="@Model.Title">
 

@@ -29,5 +29,10 @@ namespace FITlosophiData.Models
         public string WriterName { get; set; }
         public List<HashTag> HashTags { get; set; }
         public string Tags { get; set; }
+
+        public Post()
+        {
+            HashTags = new List<HashTag>();
+        }
     }
 }
