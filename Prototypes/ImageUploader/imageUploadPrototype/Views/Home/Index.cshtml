@@ -7,11 +7,12 @@
 <script src='~/Scripts/jquery.fileupload.js' type='text/javascript'></script>
 <script src='~/Scripts/jquery.cloudinary.js' type='text/javascript'></script>
 
+'https://712155957643256:oerr9UgNzPLEQ3g-LXEC7C7sMv8@api.cloudinary.com/v1_1/dk0wmifkq/resources/image'
 <script>
     $(document).ready(function () {
         $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
         //Setup input form for image upload to Cloudinary
-        $('.upload_form').append($.cloudinary.unsigned_upload_tag("bep61vxi", { cloud_name: 'dk0wmifkq' }));
+        $('.upload_form').append($.cloudinary.unsigned_upload_tag("bep61vxi", { cloud_name: 'dk0wmifkq', tags: 'blogImage'}));
 
 
         $('.cloudinary_fileupload').bind('cloudinarydone', function (e, data) {

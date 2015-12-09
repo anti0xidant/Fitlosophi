@@ -215,6 +215,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\blogSummary.css" />
+    <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\styles-bluegreen.css" />
     <Content Include="Content\css\styles-bluered.css" />
     <Content Include="Content\css\styles-greyred.css" />

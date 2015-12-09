@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<h2>Gallery</h2>
+
+<aside class="col-md-4" style="overflow-y: scroll; height:800px;">
+    <!-- Least Gallery -->
+    <section id="least">
+
+        <!-- Least Gallery: Fullscreen Preview -->
+        <div class="least-preview"></div>
+
+        <!-- Least Gallery: Thumbnails -->
+        <ul class="least-gallery" id="blogImageGallery">
+            <!-- 1th thumbnail -->
+            <li>
+                <a href="~/Scripts/leastjs/media/big/01.jpg" data-subtitle="View Picture" data-caption="Now it's possibe to add an URL-Link into caption text - <a href='http://www.google.com' target='_blank'>GOOGLE</a>">
+                <img src="~/Scripts/leastjs//media/thumbnails/01.jpg" alt="Alt Image Text"/>
+            </a>
+            </li>
+        </ul>
+    </section>
+</aside>
+    <!-- Least Gallery end -->
+    <!-- jQuery library -->
+    <script src="~/Scripts/leastjs/js/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- least.js 2 library -->
+<script src="~/Scripts/leastjs/js/libs/least/least.min.js"></script>
+
+<script src='~/Scripts/jquery.ui.widget.js' type='text/javascript'></script>
+<script src='~/Scripts/jquery.iframe-transport.js' type='text/javascript'></script>
+<script src='~/Scripts/jquery.fileupload.js' type='text/javascript'></script>
+<script src='~/Scripts/jquery.cloudinary.js' type='text/javascript'></script>
+
+<script>
+        $(document).ready(function () {
+            $('.least-gallery').least();
+            $.cloudinary.config({ cloud_name: 'dk0wmifkq', api_key: '712155957643256' });
+            var url = $.cloudinary.url('blogImage', { format: 'json', type: 'list' });
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (data, status, xhr) {
+                    $.each(data.resources, function (index, image) {
+                        $(addImageToGallery(image, index)).appendTo($('#blogImageGallery'));
+                    });
+                },
+                error: function (xhr, status, err) {
+                    alert('error:' + err);
+                }
+            });
+        });
+
+        function addImageToGallery(image, index) {
+
+            var url = "http://res.cloudinary.com/dk0wmifkq/image/upload/w_300,h_250,c_fit/v" + image.version + '/' + image.public_id + '.' + image.format;
+            return '<li><a href="' + url + '" data-subtitle="View Picture" data-caption="Image Caption - <a href="http://www.google.com" target="_blank">GOOGLE</a>><img src="' + url + '" alt="Alt Image Text"/></a></li>';
+        }
+    </script>
