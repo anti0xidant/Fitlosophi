@@ -942,6 +942,7 @@ aside.comments .comment .body {
   float: right;
   margin-top: 20px;
   margin-left: 70px;
+  margin-right: 30px;
   -webkit-border-radius: 180px;
   -moz-border-radius: 180px;
   border-radius: 180px;
@@ -982,7 +983,7 @@ aside.comments .comment .body {
   font-size: 36px;
 }
 .about-small {
-  font-size: 30px;
+  font-size: 18px;
 }
 /* The centered blocks under about me, used for "Social" and "Contact" */
 .tales-superblock {
