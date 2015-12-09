@@ -32,7 +32,7 @@
                     <div class="HashTags">
                         @foreach (var tag in Model.UserSelectedPost.HashTags)
                         {
-                            <a href="/Home/BlogByTagID?TagID=@tag.TagID">#@tag.ActualHashTag</a>
+                            <a href="/Home/BlogByTagID?TagID=@tag.TagID&Page=1">#@tag.ActualHashTag</a>
                         }
                     </div>
                 </article>
@@ -48,7 +48,7 @@
                             {
                                 foreach (var cat in Model.Categories)
                                 {
-                                    <li><a href="/Home/BlogByCategoryID?CategoryID=@cat.CategoryID">@cat.CategoryName</a></li>
+                                    <li><a href="/Home/BlogByCategoryID?CategoryID=@cat.CategoryID&Page=1">@cat.CategoryName</a></li>
                                 }
                                 <li><a href="/Home/Index">All Categories</a></li>
                             }

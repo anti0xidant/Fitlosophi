@@ -220,6 +220,7 @@
     <Content Include="Content\css\styles-greyred.css" />
     <Content Include="Content\css\tagit\jquery.tagit.css" />
     <Content Include="Content\css\tagit\tagit.ui-zendesk.css" />
+    <Content Include="Content\img\about-me.png" />
     <Content Include="Content\img\Bike.jpg" />
     <Content Include="Content\img\Boxing.jpg" />
     <Content Include="Content\img\competition.jpg" />

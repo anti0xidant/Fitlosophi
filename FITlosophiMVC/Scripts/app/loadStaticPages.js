@@ -1,17 +1,15 @@
 ﻿$(document).ready(function () {
 
-    loadStaticPages();
+    loadPageMenu();
 
 });
 
 /* Uses the  */
-function loadStaticPages() {
+function loadPageMenu() {
     $.ajax({
         url: '/api/PageAdmin/GetAllPageSummaries',
         type: 'GET',
         success: function (data, status, xhr) {
-            $('#staticPages').empty();
-
             if (data.length == 0) {
                 $('#PagesDropdown').remove();
             }
