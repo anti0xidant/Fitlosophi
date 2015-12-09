@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 tales-superblock" id="contact">
 
-        <br />
+        <br/>
 
         <form action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
 
@@ -42,6 +42,7 @@
 
         </form>
     </div>
+    @Html.Partial("_ImageGallery")
 </div>
 
 @Html.Partial("_AddImageModal");
@@ -64,6 +65,10 @@
     <script src="~/Scripts/tagit/TagitInitializer.js"></script>
 
     <script src="~/Scripts/app/EditPost.js"></script>
+
+    <!-- Image Gallery -->
+    <script src="~/Scripts/leastjs/js/libs/least/least.js"></script>
+    <script src="~/Scripts/app/imageGallery.js"></script>
 }
 
   
