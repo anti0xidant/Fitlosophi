@@ -36,7 +36,8 @@
             <input type="hidden" name="UserID" value="@User.Identity.GetUserId()"/>
 
             <div class="buttons clearfix">
-                <button type="submit" class="btn btn-xlarge btn-tales-one">Submit</button>
+                <button type="submit" class="btn btn-large btn-tales-one">Submit</button>
+                <a href="/CMS/ManagePosts" class="btn btn-large btn-tales-two">Cancel</a>
             </div>
 
         </form>
@@ -62,10 +63,7 @@
     <script src="~/Scripts/tagit/tag-it.js" type="text/javascript" charset="utf-8"></script>
     <script src="~/Scripts/tagit/TagitInitializer.js"></script>
 
-    <script src="~/Scripts/app/AddPost.js"></script>
-
-    <script>
-
-        $('#PostCategoryID>option:eq(3)').attr('selected', true);
-    </script>
+    <script src="~/Scripts/app/EditPost.js"></script>
 }
+
+  

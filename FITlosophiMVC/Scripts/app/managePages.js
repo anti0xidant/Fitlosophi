@@ -87,7 +87,7 @@ function createTableDataStaticPages(staticPage, index) {
             publishBtn = '<button class=\"btn btn-tales-one btn-xs btnPublishPage\" value=\"' + staticPage.StaticPageID + '\">Publish</button>';
         }
 
-        return '<tr><td>' + (index + 1) + '</td><td>' + staticPage.DateCreated + '</td><td>' + staticPage.ButtonName + '</td><td>' + datePublished + '</td></td><td><a class=\"btn btn-primary btn-xs btnEditPage\" href="/CMS/EditPage?id=' + staticPage.StaticPageID + '\">Edit</a></td>' +
+        return '<tr><td>' + (index + 1) + '</td><td>' + staticPage.DateCreated + '</td><td>' + staticPage.ButtonName + '</td><td>' + datePublished + '</td></td><td><a class=\"btn btn-tales-two btn-xs btnEditPage\" href="/CMS/EditPage?id=' + staticPage.StaticPageID + '\">Edit</a></td>' +
             '<td><button class=\"btn btn-danger btn-xs btnDeletePage\" value=\"' + staticPage.StaticPageID + '\">Delete</button></td><td>' + publishBtn +'</td></tr>';
         
     }
