@@ -82,7 +82,7 @@ function createTableDataManagePosts(post, index) {
         var publishBtn = '';
 
         //Display the published date if it has been published, if not create a publish button
-        if (post.DatePublished) {
+        if (post.IsPublished) {
             datePublished = post.DatePublished;
         } else {
             publishBtn = '<button class=\"btn btn-tales-one btn-xs btnPublishPost\" value=\"' + post.PostID + '\">Publish</button>';
