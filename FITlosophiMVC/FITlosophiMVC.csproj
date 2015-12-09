@@ -226,6 +226,7 @@
     <Content Include="Content\img\Cooking.jpg" />
     <Content Include="Content\img\CrossFit.jpg" />
     <Content Include="Content\img\DarkChocolate.jpg" />
+    <Content Include="Content\img\Drawing %281%29.png" />
     <Content Include="Content\img\eating.jpg" />
     <Content Include="Content\img\Eggs.jpg" />
     <Content Include="Content\img\food.jpg" />
@@ -234,6 +235,7 @@
     <Content Include="Content\img\Kickbad.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\NatureKick.jpg" />
+    <Content Include="Content\img\oops-sign.jpg" />
     <Content Include="Content\img\Recipes.jpg" />
     <Content Include="Content\img\Run.jpg" />
     <Content Include="Content\img\SeeOrganic.jpg" />
