@@ -38,4 +38,12 @@
             // close modal
         });
     });
+
+    $('#modalLaunch').click(function () {
+        $('#imageURL').val("");
+        $('.progress-bar').removeAttr('style');
+        $('.preview').empty();
+        $('#imageGeneratorModal').modal('show');
+    });
+
 });
