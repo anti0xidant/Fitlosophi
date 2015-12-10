@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /**
 *** least.js 2
 *** Author: Kamil Czujowski - @kamilczujowski
@@ -15,7 +15,7 @@
 *** http://kamilczujowski.de
 **/
 /* @group BASE */
-* {
+#imageWidget > * {
   border: 0;
   margin: 0;
   padding: 0;

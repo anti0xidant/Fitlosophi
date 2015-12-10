@@ -6,6 +6,9 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 tales-superblock ">
         <br/>
+
+        <h2>Login</h2>
+
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "contact-form", role = "form"}))
             {
@@ -18,30 +21,17 @@
 
                 @Html.ValidationMessageFor(m => m.Email, "", new {@class = "text-danger"})
 
-
-
-
                 <input name="Password" id="Password" type="Password" class="input-lg form-control" placeholder="Password"/>
 
                 @Html.ValidationMessageFor(m => m.Password, "", new {@class = "text-danger"})
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                       
-
-                        </div>
-                    </div>
-                </div>
-
                 <div class="buttons clearfix">
                     <input type="submit" value="Log in" class="btn btn-large btn-tales-one"/>
-                    @Html.CheckBoxFor(m => m.RememberMe)
-                    @Html.LabelFor(m => m.RememberMe)
-                    <input type=""/>
+                    <input type="hidden" name="RememberMe" value="false"/>
+                    <input type="checkbox" name="RememberMe" id="RememberMe" value="true"/>
+                    <label for="RememberMe" style="font-family: 'Open Sans', 'sans-serif'; font-size: 16px; color: #404b55; line-height: 27px;">Remember me?</label>
+
                 </div>
-            
-              
             }
         </section>
     </div>

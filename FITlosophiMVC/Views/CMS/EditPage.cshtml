@@ -6,7 +6,7 @@
 
         <br/>
 
-        <form action="/CMS/EditPage" method="POST" accept-charset="utf-8" class="contact-form">
+        <form id="PageForm" action="/CMS/EditPage" method="POST" accept-charset="utf-8" class="contact-form">
 
             <input type="hidden" name="StaticPageID" value="@Model.StaticPageID"/>
 
@@ -48,4 +48,7 @@
     <!-- Image Gallery -->
     <script src="~/Scripts/leastjs/js/libs/least/least.js"></script>
     <script src="~/Scripts/app/imageGallery.js"></script>
+
+    <!--JQuery Validation Initializer and Rules-->
+    <script src="~/Scripts/app/AddEditPageValidation.js"></script>
 }

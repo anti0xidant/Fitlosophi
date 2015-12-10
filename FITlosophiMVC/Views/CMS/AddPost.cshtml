@@ -11,11 +11,11 @@
 
         <br/>
 
-        <form action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
+        <form id="PostForm" action="/CMS/PostPost" method="POST" accept-charset="utf-8" class="contact-form">
 
-            <input type="text" name="Title" id="PostTitle" placeholder="Title" class="form-control input-lg">
+            <input type="text" name="Title" id="Title" placeholder="Title" class="form-control input-lg">
 
-            <select class="form-control categoryPlaceholder" name="CategoryID" id="PostCategoryID">
+            <select class="form-control categoryPlaceholder" name="CategoryID" id="CategoryID">
                 <option value="0" disabled selected hidden>Category</option>
             </select>
 
@@ -29,7 +29,7 @@
             <input type="hidden" name="UserID" value="@User.Identity.GetUserId()"/>
 
             <div class="buttons clearfix">
-                <button type="submit" class="btn btn-large btn-tales-one">Submit</button>
+                <button type="submit" id="PostSubmit" class="btn btn-large btn-tales-one">Submit</button>
                 <input id="modalLaunch" class="btn btn-large btn-tales-two" type="button" value="Upload Image" />
                 <a href="/CMS/ManagePosts" class="btn btn-large btn-tales-two">Cancel</a>
             </div>
@@ -63,6 +63,8 @@
 
 <!-- Image Gallery -->
 <script src="~/Scripts/leastjs/js/libs/least/least.js"></script>
-<script src="~/Scripts/app/imageGallery.js"></script>
+    <script src="~/Scripts/app/imageGallery.js"></script>
 
+<!--JQuery Validation Initializer and Rules-->
+<script src="~/Scripts/app/AddEditPostValidation.js"></script>
 }
