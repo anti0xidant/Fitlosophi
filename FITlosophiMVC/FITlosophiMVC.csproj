@@ -261,6 +261,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\app\AddEditPageValidation.js" />
+    <Content Include="Scripts\app\AddEditPostValidation.js" />
     <Content Include="Scripts\app\AddPage.js" />
     <Content Include="Scripts\app\AddPost.js" />
     <Content Include="Scripts\app\blogIndex.js" />

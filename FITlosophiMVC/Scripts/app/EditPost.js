@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    $('#PostCategoryID').css('color', '#555');
+    $('#CategoryID').css('color', '#555');
 
     var categoryChoice = $('#categoryTemp').val();
 
@@ -10,9 +10,9 @@
         success: function (data, status, xhr) {
             $.each(data, function (index, category) {
                 if (categoryChoice == category.CategoryID) {
-                    $('#PostCategoryID').append('<option value="' + category.CategoryID + '" selected>' + category.CategoryName + '</option>');
+                    $('#CategoryID').append('<option value="' + category.CategoryID + '" selected>' + category.CategoryName + '</option>');
                 } else {
-                    $('#PostCategoryID').append('<option value="' + category.CategoryID + '">' + category.CategoryName + '</option>');
+                    $('#CategoryID').append('<option value="' + category.CategoryID + '">' + category.CategoryName + '</option>');
                 }
                 
             });

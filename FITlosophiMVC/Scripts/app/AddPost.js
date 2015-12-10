@@ -4,18 +4,18 @@
         type: 'GET',
         success: function(data, status, xhr) {
             $.each(data, function(index, category) {
-                $('#PostCategoryID').append('<option value="' + category.CategoryID + '">' + category.CategoryName + '</option>');
+                $('#CategoryID').append('<option value="' + category.CategoryID + '">' + category.CategoryName + '</option>');
             });
         }
 
     });
 
-    $('#PostCategoryID').change(function () {
+    $('#CategoryID').change(function () {
 
-        if ($('#PostCategoryID').val() === 0) {
-            $('#PostCategoryID').css('color', '#999999');
+        if ($('#CategoryID').val() === 0) {
+            $('#CategoryID').css('color', '#999999');
         } else {
-            $('#PostCategoryID').css('color', '#555');
+            $('#CategoryID').css('color', '#555');
         }
     });
 
