@@ -125,11 +125,13 @@
                     }
                 </div>
                 <div class="tales-searchbox">
-                    <form action="/Home/BlogByTagID?TagID=1&Page=1" id="tagformid" method="get" accept-charset="utf-8">
+                    <form action="/Home/BlogByTagID" id="tagformid" method="get" accept-charset="utf-8">
 
                         <button class="searchbutton" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
+                        <input type="hidden" name="TagID" id="TagID" value="0"/>
+                        <input type="hidden" name="Page" id="Page" value="1"/>
                         <input class="searchfield ui-autocomplete-input" id="searchbox" type="text" placeholder="Hashtag Search">
                     </form>
                 </div>
