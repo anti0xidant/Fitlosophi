@@ -1,3 +1,5 @@
 ﻿$(document).ready(function() {
-    $('.blogSummary').dotdotdot();
+    $('.blogSummary').dotdotdot({
+    
+    });
 });
