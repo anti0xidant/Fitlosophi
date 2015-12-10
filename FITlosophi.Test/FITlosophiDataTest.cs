@@ -22,6 +22,7 @@ namespace FITlosophi.Test
         public FITlosophiData.Repo.Update Updaterepo { get; set; }
         public FITlosophiData.Repo.DropDown dropdownrepo { get; set; }
         public FITlosophiOperations ops { get; set; }
+        public string userID { get; set; }
 
 
         [SetUp]
@@ -32,6 +33,8 @@ namespace FITlosophi.Test
             Deleterepo = new Delete();
             Updaterepo = new Update();
             dropdownrepo = new DropDown();
+
+            userID = "b75da91b - e39a - 42ce - b2f0 - 4834eda139e1";
 
         }
 
@@ -188,7 +191,7 @@ namespace FITlosophi.Test
 
             newPost.PostID = 15;
             newPost.CategoryID = 3;
-            newPost.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newPost.UserID = userID;
             newPost.Title = "Test post 44";
             newPost.CoverImgURL = "http://localhost:54909/Content/img/eating.jpg";
             newPost.Body = "Hi";
@@ -336,7 +339,7 @@ namespace FITlosophi.Test
             List<SelectListItem> categories = new List<SelectListItem>();
                categories = dropdownrepo.GetCategoryDropDownList();
 
-            Assert.AreEqual(12, categories.Count);
+            Assert.AreEqual(11, categories.Count);
         }
 
 
