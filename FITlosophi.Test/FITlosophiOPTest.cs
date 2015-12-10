@@ -100,8 +100,9 @@ namespace FITlosophi.Test
         public void GetCategoryDropDownList()
         {
             List<SelectListItem> categories = ops.GetCategoryDropDownList();
+            var categoryListCount = ops.GetAllCategories().Count();
 
-            Assert.AreEqual(12, categories.Count);
+            Assert.AreEqual(categoryListCount, categories.Count);
         }
 
 

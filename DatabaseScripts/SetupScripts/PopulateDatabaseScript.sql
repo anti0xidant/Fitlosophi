@@ -4,6 +4,7 @@ USE HealthBlogDB
 GO
 
 Delete PostsXHash
+DBCC CHECKIDENT ('[PostsXHash]', RESEED, 0)
 Delete HashTags
 DBCC CHECKIDENT ('[HashTags]', RESEED, 0)
 Delete Posts
