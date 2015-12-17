@@ -54,7 +54,38 @@
             });
         });
     });
-});
+
+
+//    $('#managePosts').on('click', '.btnPublishPost', function () {
+//        $('#PublishModalPostID').val($(this).val());
+//        $('#PublishModalBodyTitle').html('Publish:' + $(this).closest("tr").children("td").eq(2).html());
+//        $('#PublishModal').modal('show');
+
+//        //Remove any click events from Confirm button, setup confirm buttton for publish event
+//        $('#PublishConfirm').unbind();
+//        $('#PublishConfirm').click(function () {
+   
+//            var post = {};
+//            post.PostID = $('#PublishModalPostID').val();
+//            post.HasSchedule = $('.HasSchedule:checked').val();
+//            post.StartDate = $('#FromDate').val();
+//            post.EndDate = $('#ToDate').val();
+
+//            $.ajax({
+//                url: '/api/PostsAdmin/PublishPostWithSchedule',
+//                type: 'PUT',
+//                data: post,
+//                success: function (data, status, xhr) {
+//                    $('#PublishModal').modal('hide');
+//                    loadPosts();
+//                },
+//                error: function (xhr, status, err) {
+//                    alert('error:' + err);
+//                }
+//            });
+//        });
+//    });
+//});
 
 /* Uses the  */
 function loadPosts() {

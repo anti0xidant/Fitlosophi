@@ -52,6 +52,15 @@ namespace FITlosophiMVC.Controllers.APIControllers
             update.PublishPost(post);
         }
 
+        [HttpPut]
+        [ActionName("PublishPostWithSchedule")]
+        public void PublishPostWithSchedule(Post Post)
+        {
+            var update = new FITlosophiOperations();
+
+            update.PublishPost(Post);
+        }
+
         #endregion
 
         #region Delete

@@ -573,6 +573,7 @@
     <Content Include="Scripts\leastjs\scss\assets\_options.scss" />
     <Content Include="Scripts\leastjs\scss\styles.scss" />
     <Content Include="Scripts\leastjs\scss\templates\_least.scss" />
+    <Content Include="Views\Shared\_PublishModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
