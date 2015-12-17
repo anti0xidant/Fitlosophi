@@ -22,6 +22,7 @@ namespace FITlosophi.Test
         public FITlosophiData.Repo.Update Updaterepo { get; set; }
         public FITlosophiData.Repo.DropDown dropdownrepo { get; set; }
         public FITlosophiOperations ops { get; set; }
+        public string userID { get; set; }
 
 
         [SetUp]
@@ -32,6 +33,8 @@ namespace FITlosophi.Test
             Deleterepo = new Delete();
             Updaterepo = new Update();
             dropdownrepo = new DropDown();
+
+            userID = "b75da91b - e39a - 42ce - b2f0 - 4834eda139e1";
 
         }
 
@@ -156,9 +159,9 @@ namespace FITlosophi.Test
         [Test]
         public void DeletePage()
         {
-            Deleterepo.DeletePage(5);
+            Deleterepo.DeletePage(1);
 
-            var page = Readrepo.GetPageByID(5);
+            var page = Readrepo.GetPageByID(1);
 
             Assert.AreEqual(false, page.IsActive);
         }
@@ -188,7 +191,7 @@ namespace FITlosophi.Test
 
             newPost.PostID = 15;
             newPost.CategoryID = 3;
-            newPost.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newPost.UserID = "b75da91b-e39a-42ce-b2f0-4834eda139e1";
             newPost.Title = "Test post 44";
             newPost.CoverImgURL = "http://localhost:54909/Content/img/eating.jpg";
             newPost.Body = "Hi";
@@ -210,14 +213,14 @@ namespace FITlosophi.Test
         {
             StaticPage newpage = new StaticPage();
 
-            newpage.StaticPageID = 5;
+            newpage.StaticPageID = 1;
             newpage.ButtonName = "Koshin";
-            newpage.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpage.UserID = "b75da91b-e39a-42ce-b2f0-4834eda139e1";
             newpage.Body = "days today";
 
             Updaterepo.EditPage(newpage);
 
-            var newbody = Readrepo.GetPageByID(5);
+            var newbody = Readrepo.GetPageByID(1);
 
             Assert.AreEqual("days today", newbody.Body);
         }
@@ -262,7 +265,7 @@ namespace FITlosophi.Test
             Post newpost = new Post();
 
             newpost.CategoryID = 1;
-            newpost.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpost.UserID = "b75da91b-e39a-42ce-b2f0-4834eda139e1";
             newpost.Title = "My Test Post for data layer";
             newpost.CoverImgURL = "http://localhost:54909/Content/img/golf.jpg";
             newpost.Body = "Test Body";
@@ -270,7 +273,11 @@ namespace FITlosophi.Test
 
             var result = Createrepo.AddPost(newpost);
 
-            Assert.AreEqual(22, result);
+            var posts = Readrepo.GetAllPostSummaries();
+            var post = posts.FirstOrDefault(p => p.PostID == result);
+
+
+            Assert.AreEqual(post.PostID, result);
 
         }
 
@@ -281,13 +288,16 @@ namespace FITlosophi.Test
             StaticPage newpage = new StaticPage();
 
             newpage.ButtonName = "Koshin Test Page";
-            newpage.UserID = "2de529d8-da47-4a71-bcd9-11e88099e191";
+            newpage.UserID = "b75da91b-e39a-42ce-b2f0-4834eda139e1";
             newpage.Body = "Test page body";
 
 
             var result = Createrepo.AddStaticPage(newpage);
+            var pages = Readrepo.GetAllPageSummaries();
+            var page = pages.FirstOrDefault(p => p.StaticPageID == result);
 
-            Assert.AreEqual(6, result);
+
+            Assert.AreEqual(page.StaticPageID, result);
 
         }
 
@@ -335,8 +345,9 @@ namespace FITlosophi.Test
         {
             List<SelectListItem> categories = new List<SelectListItem>();
                categories = dropdownrepo.GetCategoryDropDownList();
+               var categoryCount = Readrepo.GetAllCategories().Count();
 
-            Assert.AreEqual(12, categories.Count);
+            Assert.AreEqual(categoryCount, categories.Count);
         }
 
 

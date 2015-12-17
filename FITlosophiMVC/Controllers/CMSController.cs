@@ -40,7 +40,13 @@ namespace FITlosophiMVC.Controllers
 
             create.AddPost(post);
 
-            return View("ManagePosts");
+            if (User.IsInRole("Admin"))
+            {
+                return View("ManagePosts");
+            }
+
+
+            return RedirectToAction("Index", "Home");
         }
 
         [Authorize(Roles="Admin")]
@@ -89,7 +95,14 @@ namespace FITlosophiMVC.Controllers
 
             create.AddStaticPage(page);
 
-            return View("ManagePages");
+            if (User.IsInRole("Admin"))
+            {
+                return View("ManagePages");
+            }
+
+
+            return RedirectToAction("Index", "Home");
+
         }
 
         [Authorize(Roles="Admin")]
