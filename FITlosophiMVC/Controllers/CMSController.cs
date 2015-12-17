@@ -20,10 +20,16 @@ namespace FITlosophiMVC.Controllers
 
         #region Post
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public ActionResult ManagePosts()
         {
-            return View();
+            if (User.IsInRole("Admin"))
+            {
+                return View();
+
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         [Authorize]
@@ -75,10 +81,15 @@ namespace FITlosophiMVC.Controllers
         #region Page
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public ActionResult ManagePages()
         {
-            return View();
+            if (User.IsInRole("Admin"))
+            {
+                return View();
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         [Authorize]
